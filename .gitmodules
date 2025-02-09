@@ -1,0 +1,3 @@
+[submodule "Data/cldr-json"]
+	path = Data/cldr-json
+	url = https://github.com/unicode-org/cldr-json.git
