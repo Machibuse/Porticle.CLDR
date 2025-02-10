@@ -1,6 +1,10 @@
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
+using Porticle.CLDR.Units.UnitInfoClasses;
 
 namespace Porticle.CLDR.Units.Serialization
 {
@@ -12,7 +16,7 @@ namespace Porticle.CLDR.Units.Serialization
             1.ToString();
         }
 
-        public void Load(Unit unit)
+        public PluralPatternsForUnit Load(Unit unit)
         {
             var resourceName = "Porticle.CLDR.Units.Data."+unit.ToString("D")+".bin";
             using (var manifestResourceStream = typeof(Deserializer).Assembly.GetManifestResourceStream(resourceName))
@@ -34,10 +38,10 @@ namespace Porticle.CLDR.Units.Serialization
                         }
                     
                         var genderInfosCount = br.ReadInt32();
-                        var genderInfosInfos = new List<UnitGenderInfo>(genderInfosCount);
+                        var genderInfos = new List<UnitGenderInfo>(genderInfosCount);
                         for (int i = 0; i < genderInfosCount; i++)
                         {
-                            genderInfosInfos.Add(new UnitGenderInfo(br));
+                            genderInfos.Add(new UnitGenderInfo(br));
                         }                    
                     
                         var unitExtraInfosCount = br.ReadInt32();
@@ -46,10 +50,84 @@ namespace Porticle.CLDR.Units.Serialization
                         {
                             unitExtraInfos.Add(new UnitExtraInfo(br));
                         }
+
+                        return CreatePluralPatternsForCasesForLanguages(unit, pluralFormPatternInfos, genderInfos, unitExtraInfos);
                     }   
                 }
-            
             }
+        }
+
+        private PluralPatternsForUnit CreatePluralPatternsForCasesForLanguages(Unit unit, List<PluralFormPatternInfo> pluralFormInfo, List<UnitGenderInfo> genderInfosInfos,
+            List<UnitExtraInfo> unitExtraInfos)
+        {
+            PluralPatternsForUnit p = new PluralPatternsForUnit();
+
+            foreach (var pi in pluralFormInfo)
+            {
+                PluralPatternsForUnitAndLanguage pil;
+                if (!p.PluralPatternsForUnitByLanguage.TryGetValue(pi.Language, out pil))
+                {
+                    pil = new PluralPatternsForUnitAndLanguage();
+                    p.PluralPatternsForUnitByLanguage.Add(pi.Language, pil);
+                }
+
+                var pill = pil.GetOrAdd(pi.PluralFormLength);
+
+                var pillc = pill.GetOrAdd(pi.GrammaticalCase);
+
+                switch (pi.PluralCategory)
+                {
+                    case PluralCategory.Other:
+                        pillc.Other = pi.Text;
+                        break;
+                    case PluralCategory.One:
+                        pillc.One = pi.Text;
+                        break;
+                    case PluralCategory.Zero:
+                        pillc.Zero = pi.Text;
+                        break;
+                    case PluralCategory.Two:
+                        pillc.Two = pi.Text;
+                        break;
+                    case PluralCategory.Few:
+                        pillc.Few = pi.Text;
+                        break;
+                    case PluralCategory.Many:
+                        pillc.Many = pi.Text;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
+            }
+
+            foreach (var pi in unitExtraInfos)
+            {
+                PluralPatternsForUnitAndLanguage pil;
+                if (!p.PluralPatternsForUnitByLanguage.TryGetValue(pi.Language, out pil))
+                {
+                    pil = new PluralPatternsForUnitAndLanguage();
+                    p.PluralPatternsForUnitByLanguage.Add(pi.Language, pil);
+                    
+                    var pill = pil.GetOrAdd(pi.Length);
+
+                    pill.DisplayName = pi.DisplayName;
+                    pill.PerUnitPattern = pi.PerUnitPattern;
+                }
+            }
+            
+            foreach (var pi in genderInfosInfos)
+            {
+                PluralPatternsForUnitAndLanguage pil;
+                if (!p.PluralPatternsForUnitByLanguage.TryGetValue(pi.Language, out pil))
+                {
+                    pil = new PluralPatternsForUnitAndLanguage();
+                    p.PluralPatternsForUnitByLanguage.Add(pi.Language, pil);
+
+                    pil.Gender = pi.UnitGender;
+                }
+            }
+
+            return p;
         }
     }
 }

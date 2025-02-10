@@ -81,8 +81,9 @@ public class Parser(string repositoryRoot)
             bw.Write(genderInfos.Count);
             foreach (var genderInfo in genderInfos)
             {
-                var xx = new UnitGenderInfo(genderInfo.Key.Language,UnitGenderMap[genderInfo.Value]);
-                xx.Serialize(bw);
+                // Unit has a GenderInfo per Language
+                var unitGenderInfo = new UnitGenderInfo(genderInfo.Key.Language,UnitGenderMap[genderInfo.Value]);
+                unitGenderInfo.Serialize(bw);
             }
 
             var extraInfos = PatternExtraInfos
