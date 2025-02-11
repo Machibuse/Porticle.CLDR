@@ -46,6 +46,6 @@ jobs:
           body: "Automatisch erstelltes Release für Porticle.CLDR v${{ env.VERSION }}."
           files: Porticle.CLDR-${{ env.VERSION }}.zip
           draft: false
-          prerelease: ${{ contains(env.VERSION, '-beta') || ${{ contains(env.VERSION, '-alpha') || contains(env.VERSION, '-rc') }}
+          prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-alpha') || contains(env.VERSION, '-rc') }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
