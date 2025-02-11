@@ -18,8 +18,9 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Falls du eine andere .NET-Version nutzt, ändere dies
+          dotnet-version: '8.0.x'  # Falls du eine andere .NET-Version nutzt, passe sie an.
 
+      # Entferne das "v" aus dem Tag für NuGet-Paketversion
       - name: Extract version from tag
         run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
@@ -32,19 +33,19 @@ jobs:
       - name: Run tests
         run: dotnet test Source/Porticle.CLDR.Units.Tests/Porticle.CLDR.Units.Tests.csproj --configuration Release --no-build --verbosity normal
 
-      - name: Publish application
-        run: dotnet publish Source/Porticle.CLDR.Units/Porticle.CLDR.Units.csproj --configuration Release --output ./publish
+      - name: Pack NuGet package
+        run: dotnet pack Source/Porticle.CLDR.Units/Porticle.CLDR.Units.csproj --configuration Release --no-build --output ./nuget --property:PackageVersion=${{ env.VERSION }}
 
-      - name: Create ZIP archive
-        run: zip -r Porticle.CLDR-${{ env.VERSION }}.zip ./publish
+      - name: Publish NuGet package
+        run: dotnet nuget push ./nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v${{ env.VERSION }}
           name: Release v${{ env.VERSION }}
-          body: "Automatisch erstelltes Release für Porticle.CLDR v${{ env.VERSION }}."
-          files: Porticle.CLDR-${{ env.VERSION }}.zip
+          body: "Nuget Release für Porticle.CLDR v${{ env.VERSION }}."
+          files: ./nuget/*.nupkg
           draft: false
           prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-alpha') || contains(env.VERSION, '-rc') }}
         env:
