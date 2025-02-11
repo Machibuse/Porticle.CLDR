@@ -12,7 +12,7 @@ public class UnitTests
     public void TestMethod1()
     {
         var deserializer = new Deserializer();
-        var x = new List<Unit>() { Unit.DurationWeek, Unit.DigitalKilobit, Unit.DigitalGigabit, Unit.DurationCentury, Unit.DurationDay, Unit.DurationDecade, Unit.DurationDecade, Unit.DurationDecade, Unit.DurationDecade };
+        var x = new List<Unit>() { Unit.DurationWeek, Unit.DurationWeek, Unit.DurationWeek, Unit.AngleDegree, Unit.AngleRadian };
         foreach (var xx in x)
         {
             Stopwatch sw = Stopwatch.StartNew();

@@ -103,7 +103,7 @@ public class Parser(string repositoryRoot)
             ds.Flush();
             ms.Flush();
             var array = ms.ToArray();
-            File.WriteAllBytes(Path.Combine(RepositoryRoot,"Source/Porticle.CLDR.Generator/Porticle.CLDR.Units/Data",unitToIndex[unit]+".bin"), array);
+            File.WriteAllBytes(Path.Combine(RepositoryRoot,"Source/Porticle.CLDR.Units/Data",unitToIndex[unit]+".bin"), array);
             
             
             
@@ -122,7 +122,7 @@ public class Parser(string repositoryRoot)
             unitEnumMembers.Add(new EnumMember(unitPascal,unitToIndex[unit],enumComment));
         }
 
-        var combine = Path.Combine(RepositoryRoot, "Source/Porticle.CLDR.Generator/Porticle.CLDR.Units/Unit.cs");
+        var combine = Path.Combine(RepositoryRoot, "Source/Porticle.CLDR.Units/Unit.cs");
         File.WriteAllText(combine, CreateEnum("Porticle.CLDR.Units", "Unit", unitEnumMembers).ToString());
     }
 

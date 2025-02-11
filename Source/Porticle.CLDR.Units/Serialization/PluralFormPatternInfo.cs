@@ -4,7 +4,7 @@ namespace Porticle.CLDR.Units.Serialization
 {
     struct PluralFormPatternInfo
     {
-        public PluralFormPatternInfo(BinaryReader br) : this()
+        public PluralFormPatternInfo(BinaryReader br)
         {
             Language = br.ReadString();
             PluralFormLength = (PluralFormLength)br.ReadByte();
