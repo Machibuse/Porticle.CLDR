@@ -21,7 +21,7 @@ jobs:
           dotnet-version: '8.0.x'  # Falls du eine andere .NET-Version nutzt, ändere dies
 
       - name: Extract version from tag
-        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
 
       - name: Restore dependencies
         run: dotnet restore Source/Porticle.CLDR.Generator.sln
@@ -41,11 +41,11 @@ jobs:
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ env.VERSION }}
-          name: Release ${{ env.VERSION }}
+          tag_name: v${{ env.VERSION }}
+          name: Release v${{ env.VERSION }}
           body: "Automatisch erstelltes Release für Porticle.CLDR v${{ env.VERSION }}."
           files: Porticle.CLDR-${{ env.VERSION }}.zip
           draft: false
-          prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-rc') }}
+          prerelease: ${{ contains(env.VERSION, '-beta') || ${{ contains(env.VERSION, '-alpha') || contains(env.VERSION, '-rc') }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
