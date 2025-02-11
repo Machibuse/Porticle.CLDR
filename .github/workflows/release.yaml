@@ -18,33 +18,33 @@ jobs:
       - name: Set up .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Passe die .NET-Version an
+          dotnet-version: '8.0.x'  # Falls du eine andere .NET-Version nutzt, ändere dies
 
       - name: Extract version from tag
         run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore Source/Porticle.CLDR.Generator.sln
 
       - name: Build project
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build Source/Porticle.CLDR.Generator.sln --configuration Release --no-restore
 
       - name: Run tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test Source/Porticle.CLDR.Units.Tests/Porticle.CLDR.Units.Tests.csproj --configuration Release --no-build --verbosity normal
 
       - name: Publish application
-        run: dotnet publish -c Release -o ./publish
+        run: dotnet publish Source/Porticle.CLDR.Units/Porticle.CLDR.Units.csproj --configuration Release --output ./publish
 
       - name: Create ZIP archive
-        run: zip -r release-${{ env.VERSION }}.zip ./publish
+        run: zip -r Porticle.CLDR-${{ env.VERSION }}.zip ./publish
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ env.VERSION }}
           name: Release ${{ env.VERSION }}
-          body: "Automatic release for version ${{ env.VERSION }}."
-          files: release-${{ env.VERSION }}.zip
+          body: "Automatisch erstelltes Release für Porticle.CLDR v${{ env.VERSION }}."
+          files: Porticle.CLDR-${{ env.VERSION }}.zip
           draft: false
           prerelease: ${{ contains(env.VERSION, '-beta') || contains(env.VERSION, '-rc') }}
         env:
