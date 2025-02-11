@@ -1,4 +1,7 @@
+using System.Diagnostics;
+using System.Runtime.CompilerServices;
 using Porticle.CLDR.Units.Serialization;
+using Porticle.CLDR.Units.UnitInfoClasses;
 
 namespace Porticle.CLDR.Units.Tests;
 
@@ -9,6 +12,44 @@ public class UnitTests
     public void TestMethod1()
     {
         var deserializer = new Deserializer();
-        deserializer.Load(Unit.DurationWeek);
+        var x = new List<Unit>() { Unit.DurationWeek, Unit.DigitalKilobit, Unit.DigitalGigabit, Unit.DurationCentury, Unit.DurationDay, Unit.DurationDecade, Unit.DurationDecade, Unit.DurationDecade, Unit.DurationDecade };
+        foreach (var xx in x)
+        {
+            Stopwatch sw = Stopwatch.StartNew();
+            var pluralPatternsForUnit = deserializer.Load(xx);
+            Console.WriteLine(xx+" "+sw.ElapsedMilliseconds);
+            sw = Stopwatch.StartNew();
+            Check(pluralPatternsForUnit);
+            Console.WriteLine(sw.ElapsedMilliseconds);
+        }
+    }
+
+
+
+    private static void Check(PluralPatternsForUnit p)
+    {
+        foreach (var pair in p.PluralPatternsForUnitByLanguage)
+        {
+            Check(pair.Value.Long);
+            Check(pair.Value.Short);
+            Check(pair.Value.Narrow);
+                
+            
+        }
+    }
+
+    private static void Check(PluralPatternsForUnitLanguageAndLength value)
+    {
+        Assert.IsNotNull(value);
+        
+            
+        Assert.IsNotNull(value.None);
+            
+        Check(value.None);
+    }
+
+    private static void Check(PluralPatternsForUnitLanguageLengthAndCaseBase? valueNone)
+    {
+        Assert.IsNotNull(valueNone.Other);
     }
 }
