@@ -15,7 +15,7 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
 
         private static PluralPatternsForUnit LoadUnitDataFromResource(Unit unit1)
         {
-            return new Deserializer().Load(unit1);
+            return new CldrResourceLoader().Load(unit1);
         }
     }
 }

@@ -26,5 +26,21 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
                     throw new ArgumentOutOfRangeException(nameof(piPluralFormLength), piPluralFormLength, null);
             }
         }
+
+        public PluralPatternsForUnitLanguageAndLength GetByLength(PluralFormLength length)
+        {
+            switch (length)
+            {
+                case PluralFormLength.Long:
+                    return Long;
+                    break;
+                case PluralFormLength.Short:
+                    return Short;
+                case PluralFormLength.Narrow:
+                    return Narrow;
+                default:
+                    throw new ArgumentOutOfRangeException(nameof(length), length, null);
+            }
+        }
     }
 }

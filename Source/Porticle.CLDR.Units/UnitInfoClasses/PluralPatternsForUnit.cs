@@ -40,5 +40,15 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
 
             throw new CldrException("Language " + language + " is not supportet ");
         }
+
+        public string GetFormat(string language, int count, PluralFormLength length, GrammaticalCase grammaticalCase)
+        {
+            var x = GetCaseInfoByLanguage(language);
+            var pattern = x.GetByLength(length);
+
+            var pluralPatternsForUnitLanguageLengthAndCaseBase = pattern.GetCountInfo(grammaticalCase);
+            
+            return pluralPatternsForUnitLanguageLengthAndCaseBase.GetFormatByCount(count);
+        }
     }
 }

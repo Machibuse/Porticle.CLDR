@@ -11,19 +11,32 @@ public class UnitTests
     [TestMethod]
     public void TestMethod1()
     {
-        var deserializer = new Deserializer();
-        var x = new List<Unit>() { Unit.DurationWeek, Unit.DurationWeek, Unit.DurationWeek, Unit.AngleDegree, Unit.AngleRadian };
-        foreach (var xx in x)
-        {
-            Stopwatch sw = Stopwatch.StartNew();
-            var pluralPatternsForUnit = deserializer.Load(xx);
-            Console.WriteLine(xx+" "+sw.ElapsedMilliseconds);
-            sw = Stopwatch.StartNew();
-            Check(pluralPatternsForUnit);
-            Console.WriteLine(sw.ElapsedMilliseconds);
-        }
+        var loader = new CldrResourceLoader();
+
+        string result;
+        
+        
+        
+        
+        var weekPluralizer = loader.Load(Unit.DurationWeek);
+        
+        result = weekPluralizer.GetFormat("de", 3, PluralFormLength.Long, GrammaticalCase.Accusative); // --> "{0} Wochen"
+        Assert.AreEqual(result, "{0} Wochen");
+        
+        result = weekPluralizer.GetFormat("de", 1, PluralFormLength.Long, GrammaticalCase.Accusative); // --> "{0} Wochen"
+        Assert.AreEqual(result, "{0} Woche");
     }
 
+    [TestMethod]
+    public void TestMethod2()
+    {
+        var deserializer = new CldrResourceLoader();
+        var x = new List<Unit>() { Unit.DurationWeek, Unit.DurationWeek, Unit.DurationWeek, Unit.AngleDegree, Unit.AngleRadian };
+        
+        var pluralizer = deserializer.Load(Unit.DurationWeek);
+        
+        Check(pluralizer);
+    }    
 
 
     private static void Check(PluralPatternsForUnit p)

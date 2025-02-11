@@ -9,11 +9,11 @@ using Porticle.CLDR.Units.UnitInfoClasses;
 
 namespace Porticle.CLDR.Units.Serialization
 {
-    public class Deserializer
+    public class CldrResourceLoader
     {
-        public Deserializer()
+        public CldrResourceLoader()
         {
-            var manifestResourceNames = typeof(Deserializer).Assembly.GetManifestResourceNames();
+            var manifestResourceNames = typeof(CldrResourceLoader).Assembly.GetManifestResourceNames();
             1.ToString();
         }
 
@@ -24,7 +24,7 @@ namespace Porticle.CLDR.Units.Serialization
             {
                 // read and unpack complete resource to memorystream because of binary reader performance problem
                 // this makes a performance boost of factor 300
-                using (var manifestResourceStream = typeof(Deserializer).Assembly.GetManifestResourceStream(resourceName))
+                using (var manifestResourceStream = typeof(CldrResourceLoader).Assembly.GetManifestResourceStream(resourceName))
                 {
                     if (manifestResourceStream == null)
                     {
