@@ -81,9 +81,9 @@ public class UnitTests
             {
                 cldrUnits.GetUnitGender(lang);
                 
-                cldrUnits.GetFormatString(lang,2,PluralFormLength.Long,GrammaticalCase.Dative);
-                cldrUnits.GetFormatString(lang,2,PluralFormLength.Short,GrammaticalCase.Dative);
-                cldrUnits.GetFormatString(lang,2,PluralFormLength.Narrow,GrammaticalCase.Dative);
+                cldrUnits.GetFormatStringSafe(lang,2,PluralFormLength.Long,GrammaticalCase.Dative);
+                cldrUnits.GetFormatStringSafe(lang,2,PluralFormLength.Short,GrammaticalCase.Dative);
+                cldrUnits.GetFormatStringSafe(lang,2,PluralFormLength.Narrow,GrammaticalCase.Dative);
             }
             
             // foreach (var language in allLanguages)
