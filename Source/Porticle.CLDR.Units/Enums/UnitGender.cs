@@ -1,7 +1,7 @@
 /// <summary>
-/// Represents the grammatical gender of a unit in different languages.
-/// Some languages assign gender to units, which affects how they are used in sentences.
-/// Based on CLDR (Common Locale Data Repository).
+/// Defines grammatical genders for units to enable localized representation.
+/// This enumeration provides options for representing gender distinctions such as feminine, masculine,
+/// inanimate objects, neuter genders, common genders, and cases where gender is not specified or unknown.
 /// </summary>
 public enum UnitGender
 {
@@ -33,5 +33,11 @@ public enum UnitGender
     /// Common gender (used in languages that do not distinguish between masculine and feminine).
     /// Example (Swedish): "meter" is common gender.
     /// </summary>
-    Common = 4
+    Common = 4,
+
+    /// <summary>
+    /// Represents an unspecified or unknown grammatical gender.
+    /// This value is used when the gender of a unit is not defined or cannot be determined.
+    /// </summary>
+    Unknown = 5
 }

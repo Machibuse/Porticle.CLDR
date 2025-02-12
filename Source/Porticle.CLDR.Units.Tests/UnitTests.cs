@@ -19,7 +19,7 @@ public class UnitTests
         
         
         
-        var weekPluralizer = loader.Load(Unit.DurationWeek);
+        PatternsForUnit weekPluralizer = loader.Load(Unit.DurationWeek);
         
         result = weekPluralizer.GetFormat("de", 3, PluralFormLength.Long, GrammaticalCase.Accusative); // --> "{0} Wochen"
         Assert.AreEqual(result, "{0} Wochen");
@@ -39,16 +39,68 @@ public class UnitTests
         Check(pluralizer);
     }    
 
+    [TestMethod]
+    public void TestAll()
+    {
+        HashSet<string> allLanguages = new HashSet<string>();
+        foreach (Unit unit in Enum.GetValues<Unit>())
+        {
+            var cldrUnits = new CldrUnits(unit);
+            foreach (var la in cldrUnits.GetAllSupportedLanguages())
+            {
+                allLanguages.Add(la);
+            }
+        }
 
-    private static void Check(PluralPatternsForUnit p)
+        foreach (Unit unit in Enum.GetValues<Unit>())
+        {
+            if (unit is Unit.AreaBuJp or Unit.AreaCho or Unit.DurationDayPerson)
+            {
+                continue;
+            }
+            
+            var cldrUnits = new CldrUnits(unit);
+
+            // if (cldrUnits.GetAllSupportedLanguages().Length < allLanguages.Count)
+            // {
+            //     if (cldrUnits.GetAllSupportedLanguages().Contains("en"))
+            //     {
+            //         Console.WriteLine(unit+" is supported by "+cldrUnits.GetAllSupportedLanguages().Length +" / "+allLanguages.Count+" languages but fallback to en is supported");                
+            //     }
+            //     else if (cldrUnits.GetAllSupportedLanguages().Length == 1)
+            //     {
+            //         Console.WriteLine(unit+" is supported only by "+cldrUnits.GetAllSupportedLanguages().Single());                
+            //     }
+            //     else
+            //     {
+            //         Console.WriteLine(unit+" is supported by "+cldrUnits.GetAllSupportedLanguages().Length +" / "+allLanguages.Count+" languages without fallbach to en");                
+            //     }
+            // }
+
+            foreach (var lang in cldrUnits.GetAllSupportedLanguages())
+            {
+                cldrUnits.GetUnitGender(lang);
+                
+                cldrUnits.GetFormatString(lang,2,PluralFormLength.Long,GrammaticalCase.Dative);
+                cldrUnits.GetFormatString(lang,2,PluralFormLength.Short,GrammaticalCase.Dative);
+                cldrUnits.GetFormatString(lang,2,PluralFormLength.Narrow,GrammaticalCase.Dative);
+            }
+            
+            // foreach (var language in allLanguages)
+            // {
+            //     cldrUnits.GetUnitGender(language);
+            // }
+        }
+    }    
+    
+
+    private static void Check(PatternsForUnit p)
     {
         foreach (var pair in p.PluralPatternsForUnitByLanguage)
         {
             Check(pair.Value.Long);
             Check(pair.Value.Short);
             Check(pair.Value.Narrow);
-                
-            
         }
     }
 

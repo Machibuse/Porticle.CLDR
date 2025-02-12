@@ -4,16 +4,16 @@ using Porticle.CLDR.Units.Serialization;
 
 namespace Porticle.CLDR.Units.UnitInfoClasses
 {
-    public static class CldrUnitData
+    internal static class UnitsCache
     {
-        private static ConcurrentDictionary<Unit, PluralPatternsForUnit> UnitsDictionary = new ConcurrentDictionary<Unit, PluralPatternsForUnit>();
+        private static readonly ConcurrentDictionary<Unit, PatternsForUnit> UnitsDictionary = new ConcurrentDictionary<Unit, PatternsForUnit>();
 
-        public static PluralPatternsForUnit GetPatterns(Unit unit)
+        public static PatternsForUnit GetPatterns(Unit unit)
         {
             return UnitsDictionary.GetOrAdd(unit, u => LoadUnitDataFromResource(u));
         }
 
-        private static PluralPatternsForUnit LoadUnitDataFromResource(Unit unit1)
+        private static PatternsForUnit LoadUnitDataFromResource(Unit unit1)
         {
             return new CldrResourceLoader().Load(unit1);
         }

@@ -122,7 +122,7 @@ public class Parser(string repositoryRoot)
             unitEnumMembers.Add(new EnumMember(unitPascal,unitToIndex[unit],enumComment));
         }
 
-        var combine = Path.Combine(RepositoryRoot, "Source/Porticle.CLDR.Units/Unit.cs");
+        var combine = Path.Combine(RepositoryRoot, "Source/Porticle.CLDR.Units/Enums/Unit.cs");
         File.WriteAllText(combine, CreateEnum("Porticle.CLDR.Units", "Unit", unitEnumMembers).ToString());
     }
 

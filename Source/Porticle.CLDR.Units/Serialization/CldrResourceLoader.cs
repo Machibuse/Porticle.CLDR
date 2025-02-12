@@ -17,7 +17,7 @@ namespace Porticle.CLDR.Units.Serialization
             1.ToString();
         }
 
-        public PluralPatternsForUnit Load(Unit unit)
+        internal PatternsForUnit Load(Unit unit)
         {
             var resourceName = "Porticle.CLDR.Units.Data."+unit.ToString("D")+".bin";
             using (var ms = new MemoryStream())
@@ -65,10 +65,10 @@ namespace Porticle.CLDR.Units.Serialization
             }
         }
 
-        private PluralPatternsForUnit CreatePluralPatternsForCasesForLanguages(Unit unit, List<PluralFormPatternInfo> pluralFormInfo, List<UnitGenderInfo> genderInfosInfos,
+        private PatternsForUnit CreatePluralPatternsForCasesForLanguages(Unit unit, List<PluralFormPatternInfo> pluralFormInfo, List<UnitGenderInfo> genderInfosInfos,
             List<UnitExtraInfo> unitExtraInfos)
         {
-            PluralPatternsForUnit p = new PluralPatternsForUnit();
+            PatternsForUnit p = new PatternsForUnit();
 
             foreach (var pi in pluralFormInfo)
             {

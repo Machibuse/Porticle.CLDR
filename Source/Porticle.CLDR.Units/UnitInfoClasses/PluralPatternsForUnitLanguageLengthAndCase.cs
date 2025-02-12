@@ -5,7 +5,7 @@
     /// This implementation handles the default behavior for most languages without using few and many cases.
     /// Few and many cases are only used in a few languages and need to have special implementations.  
     /// </summary>
-    public class PluralPatternsForUnitLanguageLengthAndCase : PluralPatternsForUnitLanguageLengthAndCaseBase
+    internal class PluralPatternsForUnitLanguageLengthAndCase : PluralPatternsForUnitLanguageLengthAndCaseBase
     {
         public PluralPatternsForUnitLanguageLengthAndCase(GrammaticalCase grammaticalCase) : base(grammaticalCase)
         {

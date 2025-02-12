@@ -13,7 +13,7 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
     /// grammatical case. These patterns can be useful in language-specific localization where grammatical cases and their
     /// associated plural forms are necessary for proper linguistic representation.
     /// </remarks>
-    public class PluralPatternsForUnitLanguageAndLength
+    internal class PluralPatternsForUnitLanguageAndLength
     {
         public PluralPatternsForUnitLanguageAndLength()
         {

@@ -7,18 +7,18 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
     /// Represents a mapping of language-specific plural patterns and grammatical case information for a specific Unit.
     /// This means, this class contains all existing information for a specific unit.
     /// </summary>
-    public class PluralPatternsForUnit
+    internal class PatternsForUnit
     {
         private const string FallbackLanguage = "en";
         
-        public PluralPatternsForUnit()
+        public PatternsForUnit()
         {
         }
 
 
         internal Dictionary<string, PluralPatternsForUnitAndLanguage> PluralPatternsForUnitByLanguage { get; } = new Dictionary<string, PluralPatternsForUnitAndLanguage>();
 
-        public PluralPatternsForUnitAndLanguage GetCaseInfoByLanguage(string language)
+        private PluralPatternsForUnitAndLanguage GetCaseInfoByLanguage(string language)
         {
             if (PluralPatternsForUnitByLanguage.TryGetValue(language, out var info))
             {
@@ -49,6 +49,17 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
             var pluralPatternsForUnitLanguageLengthAndCaseBase = pattern.GetCountInfo(grammaticalCase);
             
             return pluralPatternsForUnitLanguageLengthAndCaseBase.GetFormatByCount(count);
+        }
+
+        public UnitGender GetUnitGender(string language)
+        {
+            var x = GetCaseInfoByLanguage(language);
+            return x.Gender ?? UnitGender.Unknown;
+        }
+        
+        public string[] GetAllSupportedLanguages()
+        {
+            return PluralPatternsForUnitByLanguage.Keys.ToArray();
         }
     }
 }

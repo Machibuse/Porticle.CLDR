@@ -3,12 +3,12 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace Porticle.CLDR.Units.UnitInfoClasses
 {
-    public class PluralPatternsForUnitAndLanguage
+    internal class PluralPatternsForUnitAndLanguage
     {
         public PluralPatternsForUnitLanguageAndLength Long { get; internal set; } 
         public PluralPatternsForUnitLanguageAndLength Short { get;  internal set;} 
         public PluralPatternsForUnitLanguageAndLength Narrow { get;  internal set;}
-        public UnitGender Gender { get; internal set; }
+        public UnitGender? Gender { get; internal set; }
 
         [SuppressMessage("ReSharper", "NullCoalescingConditionIsAlwaysNotNullAccordingToAPIContract")]
         internal PluralPatternsForUnitLanguageAndLength GetOrAdd(PluralFormLength piPluralFormLength)
@@ -32,12 +32,11 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
             switch (length)
             {
                 case PluralFormLength.Long:
-                    return Long;
-                    break;
+                    return Long ?? Short ?? Narrow;
                 case PluralFormLength.Short:
-                    return Short;
+                    return Short ?? Narrow ?? Long;
                 case PluralFormLength.Narrow:
-                    return Narrow;
+                    return Narrow ?? Short ?? Long;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(length), length, null);
             }

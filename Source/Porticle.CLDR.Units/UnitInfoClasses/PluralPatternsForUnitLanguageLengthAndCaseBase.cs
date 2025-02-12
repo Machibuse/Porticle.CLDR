@@ -1,6 +1,6 @@
 namespace Porticle.CLDR.Units.UnitInfoClasses
 {
-    public abstract class PluralPatternsForUnitLanguageLengthAndCaseBase
+    internal abstract class PluralPatternsForUnitLanguageLengthAndCaseBase
     {
         /// <summary>
         /// Represents a base class for handling plurality-related string formatting across various counts.
