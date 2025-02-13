@@ -4,6 +4,16 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>8</LangVersion>
         <Nullable>enable</Nullable>
+        <Version>42.1.0</Version>
+        <Title>Porticle.CLDR.Units</Title>
+        <Authors>Carsten Jendro</Authors>
+        <Description>Simple C# Library that embeds the Unicode CLDR Units Data for .net</Description>
+        <Copyright>Carsten Jendro</Copyright>
+        <PackageProjectUrl>https://github.com/Machibuse/Porticle.CLDR</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/Machibuse/Porticle.CLDR/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageIcon>pinky32.png</PackageIcon>
+        <RepositoryUrl>https://github.com/Machibuse/Porticle.CLDR.git</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,6 +22,13 @@
 
     <ItemGroup>
       <Folder Include="Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="pinky32.png">
+        <Pack>True</Pack>
+        <PackagePath></PackagePath>
+      </None>
     </ItemGroup>
 
 </Project>

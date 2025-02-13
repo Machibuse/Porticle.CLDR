@@ -35,6 +35,7 @@ public class Parser(string repositoryRoot)
         GenerateOutput();
     }
 
+    record FallbackValues(string Long, string Short, string Narrow);
     private void GenerateOutput()
     {
         var unitToIndex = Patterns.Keys.Select(key => key.Unit).Distinct().OrderBy(s => s).Select((unit, index) => (unit, index)).ToDictionary(tuple => tuple.unit, tuple => tuple.index);
@@ -50,7 +51,21 @@ public class Parser(string repositoryRoot)
             throw new ParsingException("Duplicate group " + string.Join(" ",duplicateGroupAfterPascalCase));
         }
 
-        GenerateUnitEnumClass(allUnitsOrdered, unitToIndex);
+        List<FallbackValues> fallback = new (); 
+        foreach (var unit in allUnitsOrdered)
+        {
+            var fbLong = GetFallback(unit, PluralFormLength.Long);
+            var fbShort = GetFallback(unit, PluralFormLength.Short);;
+            var fbNarrow = GetFallback(unit, PluralFormLength.Narrow);
+
+            fallback.Add(new FallbackValues(
+                fbLong ?? fbShort ?? fbNarrow ?? "{0}",
+                fbShort ?? fbNarrow ?? fbLong ?? "{0}",
+                fbNarrow ?? fbShort ?? fbLong ?? "{0}"
+            ));
+        }
+        
+        GenerateUnitEnumClass(allUnitsOrdered, unitToIndex, fallback);
 
         foreach (var unit in allUnitsOrdered)
         {
@@ -104,13 +119,43 @@ public class Parser(string repositoryRoot)
             ms.Flush();
             var array = ms.ToArray();
             File.WriteAllBytes(Path.Combine(RepositoryRoot,"Source/Porticle.CLDR.Units/Data",unitToIndex[unit]+".bin"), array);
-            
-            
-            
         }
     }
 
-    private void GenerateUnitEnumClass(List<string> allUnitsOrdered, Dictionary<string, int> unitToIndex)
+    private string? GetFallback(string unit, PluralFormLength pluralFormLength)
+    {
+        var list = Patterns
+            .Where(p => p.Key.Unit == unit && p.Key.PluralFormLength == pluralFormLength)
+            .OrderBy(p => p.Key.Language != "en")
+            .ThenBy(p => p.Key.PluralCategory != PluralCategory.Other)
+            .ThenBy(p => p.Key.PluralCategory)
+            .ThenBy(p => p.Key.GrammaticalCase != GrammaticalCase.None)
+            .ToList();
+        if (list.Count == 0)
+        {
+            return null;
+        }
+
+        if (list.Count == 1)
+        {
+            return list[0].Value;
+        }
+        
+        return list.OrderBy(pair => pair.Key.Language != "en")
+            .ThenBy(pair => !pair.Key.Language.StartsWith("en-"))
+            .ThenBy(pair => pair.Key.Language != "de")
+            .ThenBy(pair => !pair.Key.Language.StartsWith("de-"))
+            .ThenBy(pair => pair.Key.Language != "fr")
+            .ThenBy(pair => !pair.Key.Language.StartsWith("fr-"))
+            .ThenBy(pair => pair.Key.Language != "es")
+            .ThenBy(pair => !pair.Key.Language.StartsWith("es-"))
+            .ThenBy(pair => pair.Key.Language != "it")
+            .ThenBy(pair => !pair.Key.Language.StartsWith("it-"))
+            .ThenBy(pair => pair.Key.Language)
+            .First().Value;
+    }
+
+    private void GenerateUnitEnumClass(List<string> allUnitsOrdered, Dictionary<string, int> unitToIndex, List<FallbackValues> fallback)
     {
         List<EnumMember> unitEnumMembers = new List<EnumMember>();
         
@@ -123,12 +168,12 @@ public class Parser(string repositoryRoot)
         }
 
         var combine = Path.Combine(RepositoryRoot, "Source/Porticle.CLDR.Units/Enums/Unit.cs");
-        File.WriteAllText(combine, CreateEnum("Porticle.CLDR.Units", "Unit", unitEnumMembers).ToString());
+        File.WriteAllText(combine, CreateEnum("Porticle.CLDR.Units", "Unit", unitEnumMembers, fallback).ToString());
     }
 
     record EnumMember(string Name, int Number, string Remark);    
     
-    StringBuilder CreateEnum(string namespaceName, string enumName, List<EnumMember> members)
+    StringBuilder CreateEnum(string namespaceName, string enumName, List<EnumMember> members, List<FallbackValues> fallback)
     {
         // Generiere die Enum-Definition als String
         StringBuilder sb = new StringBuilder();
@@ -144,6 +189,7 @@ public class Parser(string repositoryRoot)
             sb.AppendLine($"        /// <summary>");
             sb.AppendLine($"        /// {member.Remark}");
             sb.AppendLine($"        /// </summary>");
+            sb.AppendLine($"        [UnitFallbackValues(longFallback: \"{EscapeCSharpString(fallback[index].Long)}\",shortFallback: \"{fallback[index].Short}\",narrowFallback: \"{fallback[index].Narrow}\")]");
             sb.AppendLine($"        {member.Name} = {member.Number},");
             if (index < members.Count - 1)
             {
@@ -157,6 +203,30 @@ public class Parser(string repositoryRoot)
         return sb;
     }
 
+    private static string EscapeCSharpString(string input)
+    {
+        StringBuilder sb = new StringBuilder();
+        foreach (char c in input)
+        {
+            switch (c)
+            {
+                case '\"': sb.Append("\\\""); break;
+                case '\\': sb.Append("\\\\"); break;
+                case '\n': sb.Append("\\n"); break;
+                case '\r': sb.Append("\\r"); break;
+                case '\t': sb.Append("\\t"); break;
+                case '\b': sb.Append("\\b"); break;
+                case '\f': sb.Append("\\f"); break;
+                default:
+                    if (char.IsControl(c) || c > 127) // Escape Unicode
+                        sb.Append($"\\u{((int)c):X4}");
+                    else
+                        sb.Append(c);
+                    break;
+            }
+        }
+        return sb.ToString();
+    }    
     public static string ToPascalCase(string input)
     {
         if (string.IsNullOrWhiteSpace(input))
