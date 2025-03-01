@@ -56,7 +56,7 @@ So the version `46.1.x` corresponds to the CLDR version `46.1`.
 Currently, the only difference between the two versions is the use of the `StringSyntax` attribute in .NET8.
 This will show context help when using a specific number format.
 
-![StringSyntax.png](Dok/Images/StringSyntax.png)
+![StringSyntax](Dok/Images/string_syntax.png)
 
 
 ## Getting Started
