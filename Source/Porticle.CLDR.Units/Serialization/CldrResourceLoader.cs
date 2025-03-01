@@ -93,12 +93,12 @@ namespace Porticle.CLDR.Units.Serialization
                 {
                     pluralPatternsForUnitAndLanguage = new PluralPatternsForUnitAndLanguage();
                     patterns.PluralPatternsForUnitByLanguage.Add(unitExtraInfo.Language, pluralPatternsForUnitAndLanguage);
-
-                    var pluralPatternsForUnitLanguageAndLength = pluralPatternsForUnitAndLanguage.GetOrAdd(unitExtraInfo.Length);
-
-                    pluralPatternsForUnitLanguageAndLength.DisplayName = unitExtraInfo.DisplayName;
-                    pluralPatternsForUnitLanguageAndLength.PerUnitPattern = unitExtraInfo.PerUnitPattern;
                 }
+                
+                var pluralPatternsForUnitLanguageAndLength = pluralPatternsForUnitAndLanguage.GetOrAdd(unitExtraInfo.Length);
+
+                pluralPatternsForUnitLanguageAndLength.DisplayName = unitExtraInfo.DisplayName;
+                pluralPatternsForUnitLanguageAndLength.PerUnitPattern = unitExtraInfo.PerUnitPattern;
             }
 
             foreach (var genderInfo in genderInfosInfos)

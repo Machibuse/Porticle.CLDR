@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Reflection;
 using Porticle.CLDR.Units.UnitInfoClasses;
@@ -64,18 +65,29 @@ namespace Porticle.CLDR.Units
         }
 
         /// <summary>
-        /// Formats a unit description based on the provided parameters such as culture, count, length, and grammatical case.
+        /// Formats a unit description based on the specified culture, count, length, and grammatical case.
         /// </summary>
-        /// <param name="culture">The culture information used for formatting.</param>
-        /// <param name="count">The numeric value of the unit to format.</param>
-        /// <param name="length">The desired form length of the plural unit (e.g., Long, Short, or Narrow).</param>
-        /// <param name="grammaticalCase">The grammatical case used for language-specific formatting.</param>
-        /// <returns>A string representation of the formatted unit.</returns>
-        public string FormatUnit(CultureInfo culture, int count, PluralFormLength length, GrammaticalCase grammaticalCase)
+        /// <param name="culture">The culture information to be used for formatting the unit.</param>
+        /// <param name="count">The numerical value of the unit to be formatted.</param>
+        /// <param name="length">The desired length of the plural form (e.g., Long, Short, or Narrow).</param>
+        /// <param name="grammaticalCase">The grammatical case used in the formatting, for supporting language-specific features.</param>
+        /// <param name="numberFormat">Optional. A custom number format string for formatting the numeric value. Defaults to null.</param>
+        /// <returns>A string that represents the formatted unit based on the provided parameters.</returns>
+#if NET7_0_OR_GREATER
+        public string FormatUnit(CultureInfo culture, int count, PluralFormLength length, GrammaticalCase grammaticalCase, [StringSyntax("NumericFormat")] string? numberFormat = null)
+#else
+        public string FormatUnit(CultureInfo culture, int count, PluralFormLength length, GrammaticalCase grammaticalCase, string? numberFormat = null)
+#endif
         {
-            return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long),count);
+            if (numberFormat == null)
+            {
+                return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long), count);
+            }
+
+            return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long),
+                count.ToString(numberFormat, culture));
         }
-        
+
         /// <summary>
         /// Retrieves the display name of a unit for the specified language and plural form length.
         /// </summary>
@@ -150,16 +162,21 @@ namespace Porticle.CLDR.Units
         }
 
         /// <summary>
-        /// Formats a unit using the "Long" plural form length and a predefined grammatical case.
+        /// Formats a unit using the "Long" plural form length and a default grammatical case for the specified culture.
         /// </summary>
         /// <param name="culture">The culture information used for formatting the unit.</param>
         /// <param name="count">The numeric value associated with the unit.</param>
-        /// <returns>A formatted string representation of the unit.</returns>
-        public string FormatUnitLong(CultureInfo culture, int count)
+        /// <param name="numberFormat">An optional custom number format for the numeric value.</param>
+        /// <returns>A formatted string representing the unit in the specified culture and format.</returns>
+#if NET7_0_OR_GREATER
+        public string FormatUnitLong(CultureInfo culture, int count, string? numberFormat = null)
+#else
+        public string FormatUnitLong(CultureInfo culture, int count, string? numberFormat = null)
+#endif
         {
-            return FormatUnit(culture, count, PluralFormLength.Long, GrammaticalCase.Oblique); 
+            return FormatUnit(culture, count, PluralFormLength.Long, GrammaticalCase.Oblique, numberFormat);
         }
-        
+
         /// <summary>
         ///     Retrieves the fallback pattern for a specified plural form length.
         /// </summary>
