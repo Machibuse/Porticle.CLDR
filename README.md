@@ -1,6 +1,8 @@
 # Porticle.CLDR
 
-[![Build and Release](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml/badge.svg)](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml)
+[![Build and Release](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml/badge.svg)](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml) 
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support%20Me-blue?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/CarstenJendro)
+
 
 Unit CLDR Data for C# to format values like numbers, dates, and times.  
 
