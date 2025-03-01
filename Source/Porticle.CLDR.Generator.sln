@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Porticle.CLDR.Units", "Port
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Porticle.CLDR.Units.Tests", "Porticle.CLDR.Units.Tests\Porticle.CLDR.Units.Tests.csproj", "{11213F30-ECBB-4C2A-9CFE-C2A62AA52F9A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Porticle.CLDR.Units.Samples", "Porticle.CLDR.Units.Samples\Porticle.CLDR.Units.Samples.csproj", "{DEEED9F2-A4E6-4DB7-9BD8-D979447765EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{11213F30-ECBB-4C2A-9CFE-C2A62AA52F9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11213F30-ECBB-4C2A-9CFE-C2A62AA52F9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11213F30-ECBB-4C2A-9CFE-C2A62AA52F9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEEED9F2-A4E6-4DB7-9BD8-D979447765EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEED9F2-A4E6-4DB7-9BD8-D979447765EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEED9F2-A4E6-4DB7-9BD8-D979447765EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEED9F2-A4E6-4DB7-9BD8-D979447765EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

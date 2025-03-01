@@ -2,7 +2,7 @@ using System.IO;
 
 namespace Porticle.CLDR.Units.Serialization
 {
-    struct UnitExtraInfo
+    internal struct UnitExtraInfo
     {
         public UnitExtraInfo(BinaryReader br) : this()
         {
@@ -10,7 +10,7 @@ namespace Porticle.CLDR.Units.Serialization
             Length = (PluralFormLength)br.ReadByte();
             DisplayName = br.ReadString();
             PerUnitPattern = br.ReadString();
-        }        
+        }
 
         public string Language { get; }
         public PluralFormLength Length { get; }

@@ -5,1865 +5,1244 @@ namespace Porticle.CLDR.Units
     {
         /// <summary>
         /// g-force (acceleration-g-force)
-        /// {0} g-force
-        /// {0} G
-        /// {0}Gs
         /// </summary>
-        [UnitFallbackValues("{0} g-force","{0} G","{0}Gs")]
+        [UnitFallbackValues(longFallback: "{0} g-force",shortFallback: "{0} G",narrowFallback: "{0}Gs")]
         AccelerationGForce = 0,
 
         /// <summary>
         /// meters per second squared (acceleration-meter-per-square-second)
-        /// {0} meters per second squared
-        /// {0} m/s²
-        /// {0}m/s²
         /// </summary>
-        [UnitFallbackValues("{0} meters per second squared","{0} m/s²","{0}m/s²")]
+        [UnitFallbackValues(longFallback: "{0} meters per second squared",shortFallback: "{0} m/s²",narrowFallback: "{0}m/s²")]
         AccelerationMeterPerSquareSecond = 1,
 
         /// <summary>
         /// arcminutes (angle-arc-minute)
-        /// {0} arcminutes
-        /// {0} arcmins
-        /// {0}′
         /// </summary>
-        [UnitFallbackValues("{0} arcminutes","{0} arcmins","{0}′")]
+        [UnitFallbackValues(longFallback: "{0} arcminutes",shortFallback: "{0} arcmins",narrowFallback: "{0}′")]
         AngleArcMinute = 2,
 
         /// <summary>
         /// arcseconds (angle-arc-second)
-        /// {0} arcseconds
-        /// {0} arcsecs
-        /// {0}″
         /// </summary>
-        [UnitFallbackValues("{0} arcseconds","{0} arcsecs","{0}″")]
+        [UnitFallbackValues(longFallback: "{0} arcseconds",shortFallback: "{0} arcsecs",narrowFallback: "{0}″")]
         AngleArcSecond = 3,
 
         /// <summary>
         /// degrees (angle-degree)
-        /// {0} degrees
-        /// {0} deg
-        /// {0}°
         /// </summary>
-        [UnitFallbackValues("{0} degrees","{0} deg","{0}°")]
+        [UnitFallbackValues(longFallback: "{0} degrees",shortFallback: "{0} deg",narrowFallback: "{0}°")]
         AngleDegree = 4,
 
         /// <summary>
         /// radians (angle-radian)
-        /// {0} radians
-        /// {0} rad
-        /// {0}rad
         /// </summary>
-        [UnitFallbackValues("{0} radians","{0} rad","{0}rad")]
+        [UnitFallbackValues(longFallback: "{0} radians",shortFallback: "{0} rad",narrowFallback: "{0}rad")]
         AngleRadian = 5,
 
         /// <summary>
         /// revolutions (angle-revolution)
-        /// {0} revolutions
-        /// {0} rev
-        /// {0}rev
         /// </summary>
-        [UnitFallbackValues("{0} revolutions","{0} rev","{0}rev")]
+        [UnitFallbackValues(longFallback: "{0} revolutions",shortFallback: "{0} rev",narrowFallback: "{0}rev")]
         AngleRevolution = 6,
 
         /// <summary>
         /// acres (area-acre)
-        /// {0} acres
-        /// {0} ac
-        /// {0}ac
         /// </summary>
-        [UnitFallbackValues("{0} acres","{0} ac","{0}ac")]
+        [UnitFallbackValues(longFallback: "{0} acres",shortFallback: "{0} ac",narrowFallback: "{0}ac")]
         AreaAcre = 7,
 
         /// <summary>
         /// AreaBuJp (area-bu-jp)
-        /// {0} 歩
-        /// {0} 歩
-        /// {0}歩
         /// </summary>
-        [UnitFallbackValues("{0} \u6B69","{0} 歩","{0}歩")]
+        [UnitFallbackValues(longFallback: "{0} \u6B69",shortFallback: "{0} 歩",narrowFallback: "{0}歩")]
         AreaBuJp = 8,
 
         /// <summary>
         /// AreaCho (area-cho)
-        /// {0} 町
-        /// {0} 町
-        /// {0}町
         /// </summary>
-        [UnitFallbackValues("{0} \u753A","{0} 町","{0}町")]
+        [UnitFallbackValues(longFallback: "{0} \u753A",shortFallback: "{0} 町",narrowFallback: "{0}町")]
         AreaCho = 9,
 
         /// <summary>
         /// dunams (area-dunam)
-        /// {0} dunams
-        /// {0} dunam
-        /// {0}dunam
         /// </summary>
-        [UnitFallbackValues("{0} dunams","{0} dunam","{0}dunam")]
+        [UnitFallbackValues(longFallback: "{0} dunams",shortFallback: "{0} dunam",narrowFallback: "{0}dunam")]
         AreaDunam = 10,
 
         /// <summary>
         /// hectares (area-hectare)
-        /// {0} hectares
-        /// {0} ha
-        /// {0}ha
         /// </summary>
-        [UnitFallbackValues("{0} hectares","{0} ha","{0}ha")]
+        [UnitFallbackValues(longFallback: "{0} hectares",shortFallback: "{0} ha",narrowFallback: "{0}ha")]
         AreaHectare = 11,
 
         /// <summary>
         /// AreaSeJp (area-se-jp)
-        /// {0} 畝
-        /// {0} 畝
-        /// {0}畝
         /// </summary>
-        [UnitFallbackValues("{0} \u755D","{0} 畝","{0}畝")]
+        [UnitFallbackValues(longFallback: "{0} \u755D",shortFallback: "{0} 畝",narrowFallback: "{0}畝")]
         AreaSeJp = 12,
 
         /// <summary>
         /// square centimeters (area-square-centimeter)
-        /// {0} square centimeters
-        /// {0} cm²
-        /// {0}cm²
         /// </summary>
-        [UnitFallbackValues("{0} square centimeters","{0} cm²","{0}cm²")]
+        [UnitFallbackValues(longFallback: "{0} square centimeters",shortFallback: "{0} cm²",narrowFallback: "{0}cm²")]
         AreaSquareCentimeter = 13,
 
         /// <summary>
         /// square feet (area-square-foot)
-        /// {0} square feet
-        /// {0} sq ft
-        /// {0}ft²
         /// </summary>
-        [UnitFallbackValues("{0} square feet","{0} sq ft","{0}ft²")]
+        [UnitFallbackValues(longFallback: "{0} square feet",shortFallback: "{0} sq ft",narrowFallback: "{0}ft²")]
         AreaSquareFoot = 14,
 
         /// <summary>
         /// square inches (area-square-inch)
-        /// {0} square inches
-        /// {0} in²
-        /// {0}in²
         /// </summary>
-        [UnitFallbackValues("{0} square inches","{0} in²","{0}in²")]
+        [UnitFallbackValues(longFallback: "{0} square inches",shortFallback: "{0} in²",narrowFallback: "{0}in²")]
         AreaSquareInch = 15,
 
         /// <summary>
         /// square kilometers (area-square-kilometer)
-        /// {0} square kilometers
-        /// {0} km²
-        /// {0}km²
         /// </summary>
-        [UnitFallbackValues("{0} square kilometers","{0} km²","{0}km²")]
+        [UnitFallbackValues(longFallback: "{0} square kilometers",shortFallback: "{0} km²",narrowFallback: "{0}km²")]
         AreaSquareKilometer = 16,
 
         /// <summary>
         /// square meters (area-square-meter)
-        /// {0} square meters
-        /// {0} m²
-        /// {0}m²
         /// </summary>
-        [UnitFallbackValues("{0} square meters","{0} m²","{0}m²")]
+        [UnitFallbackValues(longFallback: "{0} square meters",shortFallback: "{0} m²",narrowFallback: "{0}m²")]
         AreaSquareMeter = 17,
 
         /// <summary>
         /// square miles (area-square-mile)
-        /// {0} square miles
-        /// {0} sq mi
-        /// {0}mi²
         /// </summary>
-        [UnitFallbackValues("{0} square miles","{0} sq mi","{0}mi²")]
+        [UnitFallbackValues(longFallback: "{0} square miles",shortFallback: "{0} sq mi",narrowFallback: "{0}mi²")]
         AreaSquareMile = 18,
 
         /// <summary>
         /// square yards (area-square-yard)
-        /// {0} square yards
-        /// {0} yd²
-        /// {0}yd²
         /// </summary>
-        [UnitFallbackValues("{0} square yards","{0} yd²","{0}yd²")]
+        [UnitFallbackValues(longFallback: "{0} square yards",shortFallback: "{0} yd²",narrowFallback: "{0}yd²")]
         AreaSquareYard = 19,
 
         /// <summary>
         /// items (concentr-item)
-        /// {0} items
-        /// {0} items
-        /// {0}items
         /// </summary>
-        [UnitFallbackValues("{0} items","{0} items","{0}items")]
+        [UnitFallbackValues(longFallback: "{0} items",shortFallback: "{0} items",narrowFallback: "{0}items")]
         ConcentrItem = 20,
 
         /// <summary>
         /// karats (concentr-karat)
-        /// {0} karats
-        /// {0} kt
-        /// {0}kt
         /// </summary>
-        [UnitFallbackValues("{0} karats","{0} kt","{0}kt")]
+        [UnitFallbackValues(longFallback: "{0} karats",shortFallback: "{0} kt",narrowFallback: "{0}kt")]
         ConcentrKarat = 21,
 
         /// <summary>
         /// milligrams per deciliter (concentr-milligram-ofglucose-per-deciliter)
-        /// {0} milligrams per deciliter
-        /// {0} mg/dL
-        /// {0}mg/dL
         /// </summary>
-        [UnitFallbackValues("{0} milligrams per deciliter","{0} mg/dL","{0}mg/dL")]
+        [UnitFallbackValues(longFallback: "{0} milligrams per deciliter",shortFallback: "{0} mg/dL",narrowFallback: "{0}mg/dL")]
         ConcentrMilligramOfglucosePerDeciliter = 22,
 
         /// <summary>
         /// millimoles per liter (concentr-millimole-per-liter)
-        /// {0} millimoles per liter
-        /// {0} mmol/L
-        /// {0}mmol/L
         /// </summary>
-        [UnitFallbackValues("{0} millimoles per liter","{0} mmol/L","{0}mmol/L")]
+        [UnitFallbackValues(longFallback: "{0} millimoles per liter",shortFallback: "{0} mmol/L",narrowFallback: "{0}mmol/L")]
         ConcentrMillimolePerLiter = 23,
 
         /// <summary>
         /// moles (concentr-mole)
-        /// {0} moles
-        /// {0} mol
-        /// {0}mol
         /// </summary>
-        [UnitFallbackValues("{0} moles","{0} mol","{0}mol")]
+        [UnitFallbackValues(longFallback: "{0} moles",shortFallback: "{0} mol",narrowFallback: "{0}mol")]
         ConcentrMole = 24,
 
         /// <summary>
         /// percent (concentr-percent)
-        /// {0} percent
-        /// {0}%
-        /// {0}%
         /// </summary>
-        [UnitFallbackValues("{0} percent","{0}%","{0}%")]
+        [UnitFallbackValues(longFallback: "{0} percent",shortFallback: "{0}%",narrowFallback: "{0}%")]
         ConcentrPercent = 25,
 
         /// <summary>
         /// permille (concentr-permille)
-        /// {0} permille
-        /// {0}‰
-        /// {0}‰
         /// </summary>
-        [UnitFallbackValues("{0} permille","{0}‰","{0}‰")]
+        [UnitFallbackValues(longFallback: "{0} permille",shortFallback: "{0}‰",narrowFallback: "{0}‰")]
         ConcentrPermille = 26,
 
         /// <summary>
         /// parts per million (concentr-permillion)
-        /// {0} parts per million
-        /// {0} ppm
-        /// {0}ppm
         /// </summary>
-        [UnitFallbackValues("{0} parts per million","{0} ppm","{0}ppm")]
+        [UnitFallbackValues(longFallback: "{0} parts per million",shortFallback: "{0} ppm",narrowFallback: "{0}ppm")]
         ConcentrPermillion = 27,
 
         /// <summary>
         /// permyriad (concentr-permyriad)
-        /// {0} permyriad
-        /// {0}‱
-        /// {0}‱
         /// </summary>
-        [UnitFallbackValues("{0} permyriad","{0}‱","{0}‱")]
+        [UnitFallbackValues(longFallback: "{0} permyriad",shortFallback: "{0}‱",narrowFallback: "{0}‱")]
         ConcentrPermyriad = 28,
 
         /// <summary>
         /// parts per billion (concentr-portion-per-1e9)
-        /// {0} parts per billion
-        /// {0} ppb
-        /// {0}ppb
         /// </summary>
-        [UnitFallbackValues("{0} parts per billion","{0} ppb","{0}ppb")]
+        [UnitFallbackValues(longFallback: "{0} parts per billion",shortFallback: "{0} ppb",narrowFallback: "{0}ppb")]
         ConcentrPortionPer1E9 = 29,
 
         /// <summary>
         /// liters per 100 kilometers (consumption-liter-per-100-kilometer)
-        /// {0} liters per 100 kilometers
-        /// {0} L/100 km
-        /// {0}L/100km
         /// </summary>
-        [UnitFallbackValues("{0} liters per 100 kilometers","{0} L/100 km","{0}L/100km")]
+        [UnitFallbackValues(longFallback: "{0} liters per 100 kilometers",shortFallback: "{0} L/100 km",narrowFallback: "{0}L/100km")]
         ConsumptionLiterPer100Kilometer = 30,
 
         /// <summary>
         /// liters per kilometer (consumption-liter-per-kilometer)
-        /// {0} liters per kilometer
-        /// {0} L/km
-        /// {0}L/km
         /// </summary>
-        [UnitFallbackValues("{0} liters per kilometer","{0} L/km","{0}L/km")]
+        [UnitFallbackValues(longFallback: "{0} liters per kilometer",shortFallback: "{0} L/km",narrowFallback: "{0}L/km")]
         ConsumptionLiterPerKilometer = 31,
 
         /// <summary>
         /// miles per gallon (consumption-mile-per-gallon)
-        /// {0} miles per gallon
-        /// {0} mpg
-        /// {0}mpg
         /// </summary>
-        [UnitFallbackValues("{0} miles per gallon","{0} mpg","{0}mpg")]
+        [UnitFallbackValues(longFallback: "{0} miles per gallon",shortFallback: "{0} mpg",narrowFallback: "{0}mpg")]
         ConsumptionMilePerGallon = 32,
 
         /// <summary>
         /// miles per Imp. gallon (consumption-mile-per-gallon-imperial)
-        /// {0} miles per Imp. gallon
-        /// {0} mpg Imp.
-        /// {0}m/gUK
         /// </summary>
-        [UnitFallbackValues("{0} miles per Imp. gallon","{0} mpg Imp.","{0}m/gUK")]
+        [UnitFallbackValues(longFallback: "{0} miles per Imp. gallon",shortFallback: "{0} mpg Imp.",narrowFallback: "{0}m/gUK")]
         ConsumptionMilePerGallonImperial = 33,
 
         /// <summary>
         /// bits (digital-bit)
-        /// {0} bits
-        /// {0} bit
-        /// {0}bit
         /// </summary>
-        [UnitFallbackValues("{0} bits","{0} bit","{0}bit")]
+        [UnitFallbackValues(longFallback: "{0} bits",shortFallback: "{0} bit",narrowFallback: "{0}bit")]
         DigitalBit = 34,
 
         /// <summary>
         /// bytes (digital-byte)
-        /// {0} bytes
-        /// {0} byte
-        /// {0}B
         /// </summary>
-        [UnitFallbackValues("{0} bytes","{0} byte","{0}B")]
+        [UnitFallbackValues(longFallback: "{0} bytes",shortFallback: "{0} byte",narrowFallback: "{0}B")]
         DigitalByte = 35,
 
         /// <summary>
         /// gigabits (digital-gigabit)
-        /// {0} gigabits
-        /// {0} Gb
-        /// {0}Gb
         /// </summary>
-        [UnitFallbackValues("{0} gigabits","{0} Gb","{0}Gb")]
+        [UnitFallbackValues(longFallback: "{0} gigabits",shortFallback: "{0} Gb",narrowFallback: "{0}Gb")]
         DigitalGigabit = 36,
 
         /// <summary>
         /// gigabytes (digital-gigabyte)
-        /// {0} gigabytes
-        /// {0} GB
-        /// {0}GB
         /// </summary>
-        [UnitFallbackValues("{0} gigabytes","{0} GB","{0}GB")]
+        [UnitFallbackValues(longFallback: "{0} gigabytes",shortFallback: "{0} GB",narrowFallback: "{0}GB")]
         DigitalGigabyte = 37,
 
         /// <summary>
         /// kilobits (digital-kilobit)
-        /// {0} kilobits
-        /// {0} kb
-        /// {0}kb
         /// </summary>
-        [UnitFallbackValues("{0} kilobits","{0} kb","{0}kb")]
+        [UnitFallbackValues(longFallback: "{0} kilobits",shortFallback: "{0} kb",narrowFallback: "{0}kb")]
         DigitalKilobit = 38,
 
         /// <summary>
         /// kilobytes (digital-kilobyte)
-        /// {0} kilobytes
-        /// {0} kB
-        /// {0}kB
         /// </summary>
-        [UnitFallbackValues("{0} kilobytes","{0} kB","{0}kB")]
+        [UnitFallbackValues(longFallback: "{0} kilobytes",shortFallback: "{0} kB",narrowFallback: "{0}kB")]
         DigitalKilobyte = 39,
 
         /// <summary>
         /// megabits (digital-megabit)
-        /// {0} megabits
-        /// {0} Mb
-        /// {0}Mb
         /// </summary>
-        [UnitFallbackValues("{0} megabits","{0} Mb","{0}Mb")]
+        [UnitFallbackValues(longFallback: "{0} megabits",shortFallback: "{0} Mb",narrowFallback: "{0}Mb")]
         DigitalMegabit = 40,
 
         /// <summary>
         /// megabytes (digital-megabyte)
-        /// {0} megabytes
-        /// {0} MB
-        /// {0}MB
         /// </summary>
-        [UnitFallbackValues("{0} megabytes","{0} MB","{0}MB")]
+        [UnitFallbackValues(longFallback: "{0} megabytes",shortFallback: "{0} MB",narrowFallback: "{0}MB")]
         DigitalMegabyte = 41,
 
         /// <summary>
         /// petabytes (digital-petabyte)
-        /// {0} petabytes
-        /// {0} PB
-        /// {0}PB
         /// </summary>
-        [UnitFallbackValues("{0} petabytes","{0} PB","{0}PB")]
+        [UnitFallbackValues(longFallback: "{0} petabytes",shortFallback: "{0} PB",narrowFallback: "{0}PB")]
         DigitalPetabyte = 42,
 
         /// <summary>
         /// terabits (digital-terabit)
-        /// {0} terabits
-        /// {0} Tb
-        /// {0}Tb
         /// </summary>
-        [UnitFallbackValues("{0} terabits","{0} Tb","{0}Tb")]
+        [UnitFallbackValues(longFallback: "{0} terabits",shortFallback: "{0} Tb",narrowFallback: "{0}Tb")]
         DigitalTerabit = 43,
 
         /// <summary>
         /// terabytes (digital-terabyte)
-        /// {0} terabytes
-        /// {0} TB
-        /// {0}TB
         /// </summary>
-        [UnitFallbackValues("{0} terabytes","{0} TB","{0}TB")]
+        [UnitFallbackValues(longFallback: "{0} terabytes",shortFallback: "{0} TB",narrowFallback: "{0}TB")]
         DigitalTerabyte = 44,
 
         /// <summary>
         /// centuries (duration-century)
-        /// {0} centuries
-        /// {0} c
-        /// {0}c
         /// </summary>
-        [UnitFallbackValues("{0} centuries","{0} c","{0}c")]
+        [UnitFallbackValues(longFallback: "{0} centuries",shortFallback: "{0} c",narrowFallback: "{0}c")]
         DurationCentury = 45,
 
         /// <summary>
         /// days (duration-day)
-        /// {0} days
-        /// {0} days
-        /// {0}d
         /// </summary>
-        [UnitFallbackValues("{0} days","{0} days","{0}d")]
+        [UnitFallbackValues(longFallback: "{0} days",shortFallback: "{0} days",narrowFallback: "{0}d")]
         DurationDay = 46,
 
         /// <summary>
         /// DurationDayPerson (duration-day-person)
-        /// {0} dnů
-        /// {0} dnů
-        /// {0} dnů
         /// </summary>
-        [UnitFallbackValues("{0} dn\u016F","{0} dnů","{0} dnů")]
+        [UnitFallbackValues(longFallback: "{0} Tage",shortFallback: "{0} Tage",narrowFallback: "{0} Tage")]
         DurationDayPerson = 47,
 
         /// <summary>
         /// decades (duration-decade)
-        /// {0} decades
-        /// {0} dec
-        /// {0}dec
         /// </summary>
-        [UnitFallbackValues("{0} decades","{0} dec","{0}dec")]
+        [UnitFallbackValues(longFallback: "{0} decades",shortFallback: "{0} dec",narrowFallback: "{0}dec")]
         DurationDecade = 48,
 
         /// <summary>
         /// hours (duration-hour)
-        /// {0} hours
-        /// {0} hr
-        /// {0}h
         /// </summary>
-        [UnitFallbackValues("{0} hours","{0} hr","{0}h")]
+        [UnitFallbackValues(longFallback: "{0} hours",shortFallback: "{0} hr",narrowFallback: "{0}h")]
         DurationHour = 49,
 
         /// <summary>
         /// microseconds (duration-microsecond)
-        /// {0} microseconds
-        /// {0} μs
-        /// {0}μs
         /// </summary>
-        [UnitFallbackValues("{0} microseconds","{0} μs","{0}μs")]
+        [UnitFallbackValues(longFallback: "{0} microseconds",shortFallback: "{0} μs",narrowFallback: "{0}μs")]
         DurationMicrosecond = 50,
 
         /// <summary>
         /// milliseconds (duration-millisecond)
-        /// {0} milliseconds
-        /// {0} ms
-        /// {0}ms
         /// </summary>
-        [UnitFallbackValues("{0} milliseconds","{0} ms","{0}ms")]
+        [UnitFallbackValues(longFallback: "{0} milliseconds",shortFallback: "{0} ms",narrowFallback: "{0}ms")]
         DurationMillisecond = 51,
 
         /// <summary>
         /// minutes (duration-minute)
-        /// {0} minutes
-        /// {0} min
-        /// {0}m
         /// </summary>
-        [UnitFallbackValues("{0} minutes","{0} min","{0}m")]
+        [UnitFallbackValues(longFallback: "{0} minutes",shortFallback: "{0} min",narrowFallback: "{0}m")]
         DurationMinute = 52,
 
         /// <summary>
         /// months (duration-month)
-        /// {0} months
-        /// {0} mths
-        /// {0}m
         /// </summary>
-        [UnitFallbackValues("{0} months","{0} mths","{0}m")]
+        [UnitFallbackValues(longFallback: "{0} months",shortFallback: "{0} mths",narrowFallback: "{0}m")]
         DurationMonth = 53,
 
         /// <summary>
         /// nanoseconds (duration-nanosecond)
-        /// {0} nanoseconds
-        /// {0} ns
-        /// {0}ns
         /// </summary>
-        [UnitFallbackValues("{0} nanoseconds","{0} ns","{0}ns")]
+        [UnitFallbackValues(longFallback: "{0} nanoseconds",shortFallback: "{0} ns",narrowFallback: "{0}ns")]
         DurationNanosecond = 54,
 
         /// <summary>
         /// nights (duration-night)
-        /// {0} nights
-        /// {0} nights
-        /// {0}nights
         /// </summary>
-        [UnitFallbackValues("{0} nights","{0} nights","{0}nights")]
+        [UnitFallbackValues(longFallback: "{0} nights",shortFallback: "{0} nights",narrowFallback: "{0}nights")]
         DurationNight = 55,
 
         /// <summary>
         /// quarters (duration-quarter)
-        /// {0} quarters
-        /// {0} qtrs
-        /// {0}q
         /// </summary>
-        [UnitFallbackValues("{0} quarters","{0} qtrs","{0}q")]
+        [UnitFallbackValues(longFallback: "{0} quarters",shortFallback: "{0} qtrs",narrowFallback: "{0}q")]
         DurationQuarter = 56,
 
         /// <summary>
         /// seconds (duration-second)
-        /// {0} seconds
-        /// {0} sec
-        /// {0}s
         /// </summary>
-        [UnitFallbackValues("{0} seconds","{0} sec","{0}s")]
+        [UnitFallbackValues(longFallback: "{0} seconds",shortFallback: "{0} sec",narrowFallback: "{0}s")]
         DurationSecond = 57,
 
         /// <summary>
         /// weeks (duration-week)
-        /// {0} weeks
-        /// {0} wks
-        /// {0}w
         /// </summary>
-        [UnitFallbackValues("{0} weeks","{0} wks","{0}w")]
+        [UnitFallbackValues(longFallback: "{0} weeks",shortFallback: "{0} wks",narrowFallback: "{0}w")]
         DurationWeek = 58,
 
         /// <summary>
         /// years (duration-year)
-        /// {0} years
-        /// {0} yrs
-        /// {0}y
         /// </summary>
-        [UnitFallbackValues("{0} years","{0} yrs","{0}y")]
+        [UnitFallbackValues(longFallback: "{0} years",shortFallback: "{0} yrs",narrowFallback: "{0}y")]
         DurationYear = 59,
 
         /// <summary>
         /// amperes (electric-ampere)
-        /// {0} amperes
-        /// {0} A
-        /// {0}A
         /// </summary>
-        [UnitFallbackValues("{0} amperes","{0} A","{0}A")]
+        [UnitFallbackValues(longFallback: "{0} amperes",shortFallback: "{0} A",narrowFallback: "{0}A")]
         ElectricAmpere = 60,
 
         /// <summary>
         /// milliamperes (electric-milliampere)
-        /// {0} milliamperes
-        /// {0} mA
-        /// {0}mA
         /// </summary>
-        [UnitFallbackValues("{0} milliamperes","{0} mA","{0}mA")]
+        [UnitFallbackValues(longFallback: "{0} milliamperes",shortFallback: "{0} mA",narrowFallback: "{0}mA")]
         ElectricMilliampere = 61,
 
         /// <summary>
         /// ohms (electric-ohm)
-        /// {0} ohms
-        /// {0} Ω
-        /// {0}Ω
         /// </summary>
-        [UnitFallbackValues("{0} ohms","{0} Ω","{0}Ω")]
+        [UnitFallbackValues(longFallback: "{0} ohms",shortFallback: "{0} Ω",narrowFallback: "{0}Ω")]
         ElectricOhm = 62,
 
         /// <summary>
         /// volts (electric-volt)
-        /// {0} volts
-        /// {0} V
-        /// {0}V
         /// </summary>
-        [UnitFallbackValues("{0} volts","{0} V","{0}V")]
+        [UnitFallbackValues(longFallback: "{0} volts",shortFallback: "{0} V",narrowFallback: "{0}V")]
         ElectricVolt = 63,
 
         /// <summary>
         /// British thermal units (energy-british-thermal-unit)
-        /// {0} British thermal units
-        /// {0} Btu
-        /// {0}Btu
         /// </summary>
-        [UnitFallbackValues("{0} British thermal units","{0} Btu","{0}Btu")]
+        [UnitFallbackValues(longFallback: "{0} British thermal units",shortFallback: "{0} Btu",narrowFallback: "{0}Btu")]
         EnergyBritishThermalUnit = 64,
 
         /// <summary>
         /// calories (energy-calorie)
-        /// {0} calories
-        /// {0} cal
-        /// {0}cal
         /// </summary>
-        [UnitFallbackValues("{0} calories","{0} cal","{0}cal")]
+        [UnitFallbackValues(longFallback: "{0} calories",shortFallback: "{0} cal",narrowFallback: "{0}cal")]
         EnergyCalorie = 65,
 
         /// <summary>
         /// electronvolts (energy-electronvolt)
-        /// {0} electronvolts
-        /// {0} eV
-        /// {0}eV
         /// </summary>
-        [UnitFallbackValues("{0} electronvolts","{0} eV","{0}eV")]
+        [UnitFallbackValues(longFallback: "{0} electronvolts",shortFallback: "{0} eV",narrowFallback: "{0}eV")]
         EnergyElectronvolt = 66,
 
         /// <summary>
         /// Calories (energy-foodcalorie)
-        /// {0} Calories
-        /// {0} Cal
-        /// {0}Cal
         /// </summary>
-        [UnitFallbackValues("{0} Calories","{0} Cal","{0}Cal")]
+        [UnitFallbackValues(longFallback: "{0} Calories",shortFallback: "{0} Cal",narrowFallback: "{0}Cal")]
         EnergyFoodcalorie = 67,
 
         /// <summary>
         /// joules (energy-joule)
-        /// {0} joules
-        /// {0} J
-        /// {0}J
         /// </summary>
-        [UnitFallbackValues("{0} joules","{0} J","{0}J")]
+        [UnitFallbackValues(longFallback: "{0} joules",shortFallback: "{0} J",narrowFallback: "{0}J")]
         EnergyJoule = 68,
 
         /// <summary>
         /// kilocalories (energy-kilocalorie)
-        /// {0} kilocalories
-        /// {0} kcal
-        /// {0}kcal
         /// </summary>
-        [UnitFallbackValues(longFallback:"{0} kilocalories", shortFallback: "{0} kcal", narrowFallback: "{0}kcal")]
+        [UnitFallbackValues(longFallback: "{0} kilocalories",shortFallback: "{0} kcal",narrowFallback: "{0}kcal")]
         EnergyKilocalorie = 69,
 
         /// <summary>
         /// kilojoules (energy-kilojoule)
-        /// {0} kilojoules
-        /// {0} kJ
-        /// {0}kJ
         /// </summary>
-        [UnitFallbackValues("{0} kilojoules","{0} kJ","{0}kJ")]
+        [UnitFallbackValues(longFallback: "{0} kilojoules",shortFallback: "{0} kJ",narrowFallback: "{0}kJ")]
         EnergyKilojoule = 70,
 
         /// <summary>
         /// kilowatt-hours (energy-kilowatt-hour)
-        /// {0} kilowatt-hours
-        /// {0} kWh
-        /// {0}kWh
         /// </summary>
-        [UnitFallbackValues("{0} kilowatt-hours","{0} kWh","{0}kWh")]
+        [UnitFallbackValues(longFallback: "{0} kilowatt-hours",shortFallback: "{0} kWh",narrowFallback: "{0}kWh")]
         EnergyKilowattHour = 71,
 
         /// <summary>
         /// US therms (energy-therm-us)
-        /// {0} US therms
-        /// {0} US therms
-        /// {0}US therms
         /// </summary>
-        [UnitFallbackValues("{0} US therms","{0} US therms","{0}US therms")]
+        [UnitFallbackValues(longFallback: "{0} US therms",shortFallback: "{0} US therms",narrowFallback: "{0}US therms")]
         EnergyThermUs = 72,
 
         /// <summary>
         /// kilowatt-hours per 100 kilometers (force-kilowatt-hour-per-100-kilometer)
-        /// {0} kilowatt-hours per 100 kilometers
-        /// {0} kWh/100km
-        /// {0}kWh/100km
         /// </summary>
-        [UnitFallbackValues("{0} kilowatt-hours per 100 kilometers","{0} kWh/100km","{0}kWh/100km")]
+        [UnitFallbackValues(longFallback: "{0} kilowatt-hours per 100 kilometers",shortFallback: "{0} kWh/100km",narrowFallback: "{0}kWh/100km")]
         ForceKilowattHourPer100Kilometer = 73,
 
         /// <summary>
         /// newtons (force-newton)
-        /// {0} newtons
-        /// {0} N
-        /// {0}N
         /// </summary>
-        [UnitFallbackValues("{0} newtons","{0} N","{0}N")]
+        [UnitFallbackValues(longFallback: "{0} newtons",shortFallback: "{0} N",narrowFallback: "{0}N")]
         ForceNewton = 74,
 
         /// <summary>
         /// pounds of force (force-pound-force)
-        /// {0} pounds of force
-        /// {0} lbf
-        /// {0}lbf
         /// </summary>
-        [UnitFallbackValues("{0} pounds of force","{0} lbf","{0}lbf")]
+        [UnitFallbackValues(longFallback: "{0} pounds of force",shortFallback: "{0} lbf",narrowFallback: "{0}lbf")]
         ForcePoundForce = 75,
 
         /// <summary>
         /// gigahertz (frequency-gigahertz)
-        /// {0} gigahertz
-        /// {0} GHz
-        /// {0}GHz
         /// </summary>
-        [UnitFallbackValues("{0} gigahertz","{0} GHz","{0}GHz")]
+        [UnitFallbackValues(longFallback: "{0} gigahertz",shortFallback: "{0} GHz",narrowFallback: "{0}GHz")]
         FrequencyGigahertz = 76,
 
         /// <summary>
         /// hertz (frequency-hertz)
-        /// {0} hertz
-        /// {0} Hz
-        /// {0}Hz
         /// </summary>
-        [UnitFallbackValues("{0} hertz","{0} Hz","{0}Hz")]
+        [UnitFallbackValues(longFallback: "{0} hertz",shortFallback: "{0} Hz",narrowFallback: "{0}Hz")]
         FrequencyHertz = 77,
 
         /// <summary>
         /// kilohertz (frequency-kilohertz)
-        /// {0} kilohertz
-        /// {0} kHz
-        /// {0}kHz
         /// </summary>
-        [UnitFallbackValues("{0} kilohertz","{0} kHz","{0}kHz")]
+        [UnitFallbackValues(longFallback: "{0} kilohertz",shortFallback: "{0} kHz",narrowFallback: "{0}kHz")]
         FrequencyKilohertz = 78,
 
         /// <summary>
         /// megahertz (frequency-megahertz)
-        /// {0} megahertz
-        /// {0} MHz
-        /// {0}MHz
         /// </summary>
-        [UnitFallbackValues("{0} megahertz","{0} MHz","{0}MHz")]
+        [UnitFallbackValues(longFallback: "{0} megahertz",shortFallback: "{0} MHz",narrowFallback: "{0}MHz")]
         FrequencyMegahertz = 79,
 
         /// <summary>
         /// dots (graphics-dot)
-        /// {0} dots
-        /// {0} dots
-        /// {0}dot
         /// </summary>
-        [UnitFallbackValues("{0} dots","{0} dots","{0}dot")]
+        [UnitFallbackValues(longFallback: "{0} dots",shortFallback: "{0} dots",narrowFallback: "{0}dot")]
         GraphicsDot = 80,
 
         /// <summary>
         /// dots per centimeter (graphics-dot-per-centimeter)
-        /// {0} dots per centimeter
-        /// {0} dpcm
-        /// {0}dpcm
         /// </summary>
-        [UnitFallbackValues("{0} dots per centimeter","{0} dpcm","{0}dpcm")]
+        [UnitFallbackValues(longFallback: "{0} dots per centimeter",shortFallback: "{0} dpcm",narrowFallback: "{0}dpcm")]
         GraphicsDotPerCentimeter = 81,
 
         /// <summary>
         /// dots per inch (graphics-dot-per-inch)
-        /// {0} dots per inch
-        /// {0} dpi
-        /// {0}dpi
         /// </summary>
-        [UnitFallbackValues("{0} dots per inch","{0} dpi","{0}dpi")]
+        [UnitFallbackValues(longFallback: "{0} dots per inch",shortFallback: "{0} dpi",narrowFallback: "{0}dpi")]
         GraphicsDotPerInch = 82,
 
         /// <summary>
         /// typographic ems (graphics-em)
-        /// {0} ems
-        /// {0} em
-        /// {0}em
         /// </summary>
-        [UnitFallbackValues("{0} ems","{0} em","{0}em")]
+        [UnitFallbackValues(longFallback: "{0} ems",shortFallback: "{0} em",narrowFallback: "{0}em")]
         GraphicsEm = 83,
 
         /// <summary>
         /// megapixels (graphics-megapixel)
-        /// {0} megapixels
-        /// {0} MP
-        /// {0}MP
         /// </summary>
-        [UnitFallbackValues("{0} megapixels","{0} MP","{0}MP")]
+        [UnitFallbackValues(longFallback: "{0} megapixels",shortFallback: "{0} MP",narrowFallback: "{0}MP")]
         GraphicsMegapixel = 84,
 
         /// <summary>
         /// pixels (graphics-pixel)
-        /// {0} pixels
-        /// {0} px
-        /// {0}px
         /// </summary>
-        [UnitFallbackValues("{0} pixels","{0} px","{0}px")]
+        [UnitFallbackValues(longFallback: "{0} pixels",shortFallback: "{0} px",narrowFallback: "{0}px")]
         GraphicsPixel = 85,
 
         /// <summary>
         /// pixels per centimeter (graphics-pixel-per-centimeter)
-        /// {0} pixels per centimeter
-        /// {0} ppcm
-        /// {0}ppcm
         /// </summary>
-        [UnitFallbackValues("{0} pixels per centimeter","{0} ppcm","{0}ppcm")]
+        [UnitFallbackValues(longFallback: "{0} pixels per centimeter",shortFallback: "{0} ppcm",narrowFallback: "{0}ppcm")]
         GraphicsPixelPerCentimeter = 86,
 
         /// <summary>
         /// pixels per inch (graphics-pixel-per-inch)
-        /// {0} pixels per inch
-        /// {0} ppi
-        /// {0}ppi
         /// </summary>
-        [UnitFallbackValues("{0} pixels per inch","{0} ppi","{0}ppi")]
+        [UnitFallbackValues(longFallback: "{0} pixels per inch",shortFallback: "{0} ppi",narrowFallback: "{0}ppi")]
         GraphicsPixelPerInch = 87,
 
         /// <summary>
         /// astronomical units (length-astronomical-unit)
-        /// {0} astronomical units
-        /// {0} au
-        /// {0}au
         /// </summary>
-        [UnitFallbackValues("{0} astronomical units","{0} au","{0}au")]
+        [UnitFallbackValues(longFallback: "{0} astronomical units",shortFallback: "{0} au",narrowFallback: "{0}au")]
         LengthAstronomicalUnit = 88,
 
         /// <summary>
         /// centimeters (length-centimeter)
-        /// {0} centimeters
-        /// {0} cm
-        /// {0}cm
         /// </summary>
-        [UnitFallbackValues("{0} centimeters","{0} cm","{0}cm")]
+        [UnitFallbackValues(longFallback: "{0} centimeters",shortFallback: "{0} cm",narrowFallback: "{0}cm")]
         LengthCentimeter = 89,
 
         /// <summary>
         /// decimeters (length-decimeter)
-        /// {0} decimeters
-        /// {0} dm
-        /// {0}dm
         /// </summary>
-        [UnitFallbackValues("{0} decimeters","{0} dm","{0}dm")]
+        [UnitFallbackValues(longFallback: "{0} decimeters",shortFallback: "{0} dm",narrowFallback: "{0}dm")]
         LengthDecimeter = 90,
 
         /// <summary>
         /// earth radius (length-earth-radius)
-        /// {0} earth radius
-        /// {0} R⊕
-        /// {0}R⊕
         /// </summary>
-        [UnitFallbackValues("{0} earth radius","{0} R⊕","{0}R⊕")]
+        [UnitFallbackValues(longFallback: "{0} earth radius",shortFallback: "{0} R⊕",narrowFallback: "{0}R⊕")]
         LengthEarthRadius = 91,
 
         /// <summary>
         /// fathoms (length-fathom)
-        /// {0} fathoms
-        /// {0} fth
-        /// {0}fth
         /// </summary>
-        [UnitFallbackValues("{0} fathoms","{0} fth","{0}fth")]
+        [UnitFallbackValues(longFallback: "{0} fathoms",shortFallback: "{0} fth",narrowFallback: "{0}fth")]
         LengthFathom = 92,
 
         /// <summary>
         /// feet (length-foot)
-        /// {0} feet
-        /// {0} ft
-        /// {0}′
         /// </summary>
-        [UnitFallbackValues("{0} feet","{0} ft","{0}′")]
+        [UnitFallbackValues(longFallback: "{0} feet",shortFallback: "{0} ft",narrowFallback: "{0}′")]
         LengthFoot = 93,
 
         /// <summary>
         /// furlongs (length-furlong)
-        /// {0} furlongs
-        /// {0} fur
-        /// {0}fur
         /// </summary>
-        [UnitFallbackValues("{0} furlongs","{0} fur","{0}fur")]
+        [UnitFallbackValues(longFallback: "{0} furlongs",shortFallback: "{0} fur",narrowFallback: "{0}fur")]
         LengthFurlong = 94,
 
         /// <summary>
         /// inches (length-inch)
-        /// {0} inches
-        /// {0} in
-        /// {0}″
         /// </summary>
-        [UnitFallbackValues("{0} inches","{0} in","{0}″")]
+        [UnitFallbackValues(longFallback: "{0} inches",shortFallback: "{0} in",narrowFallback: "{0}″")]
         LengthInch = 95,
 
         /// <summary>
         /// LengthJoJp (length-jo-jp)
-        /// {0} 丈
-        /// {0} 丈
-        /// {0}丈
         /// </summary>
-        [UnitFallbackValues("{0} \u4E08","{0} 丈","{0}丈")]
+        [UnitFallbackValues(longFallback: "{0} \u4E08",shortFallback: "{0} 丈",narrowFallback: "{0}丈")]
         LengthJoJp = 96,
 
         /// <summary>
         /// LengthKen (length-ken)
-        /// {0} 間
-        /// {0} 間
-        /// {0}間
         /// </summary>
-        [UnitFallbackValues("{0} \u9593","{0} 間","{0}間")]
+        [UnitFallbackValues(longFallback: "{0} \u9593",shortFallback: "{0} 間",narrowFallback: "{0}間")]
         LengthKen = 97,
 
         /// <summary>
         /// kilometers (length-kilometer)
-        /// {0} kilometers
-        /// {0} km
-        /// {0}km
         /// </summary>
-        [UnitFallbackValues("{0} kilometers","{0} km","{0}km")]
+        [UnitFallbackValues(longFallback: "{0} kilometers",shortFallback: "{0} km",narrowFallback: "{0}km")]
         LengthKilometer = 98,
 
         /// <summary>
         /// light years (length-light-year)
-        /// {0} light years
-        /// {0} ly
-        /// {0}ly
         /// </summary>
-        [UnitFallbackValues("{0} light years","{0} ly","{0}ly")]
+        [UnitFallbackValues(longFallback: "{0} light years",shortFallback: "{0} ly",narrowFallback: "{0}ly")]
         LengthLightYear = 99,
 
         /// <summary>
         /// meters (length-meter)
-        /// {0} meters
-        /// {0} m
-        /// {0}m
         /// </summary>
-        [UnitFallbackValues("{0} meters","{0} m","{0}m")]
+        [UnitFallbackValues(longFallback: "{0} meters",shortFallback: "{0} m",narrowFallback: "{0}m")]
         LengthMeter = 100,
 
         /// <summary>
         /// micrometers (length-micrometer)
-        /// {0} micrometers
-        /// {0} μm
-        /// {0}μm
         /// </summary>
-        [UnitFallbackValues("{0} micrometers","{0} μm","{0}μm")]
+        [UnitFallbackValues(longFallback: "{0} micrometers",shortFallback: "{0} μm",narrowFallback: "{0}μm")]
         LengthMicrometer = 101,
 
         /// <summary>
         /// miles (length-mile)
-        /// {0} miles
-        /// {0} mi
-        /// {0}mi
         /// </summary>
-        [UnitFallbackValues("{0} miles","{0} mi","{0}mi")]
+        [UnitFallbackValues(longFallback: "{0} miles",shortFallback: "{0} mi",narrowFallback: "{0}mi")]
         LengthMile = 102,
 
         /// <summary>
         /// miles-scandinavian (length-mile-scandinavian)
-        /// {0} miles-scandinavian
-        /// {0} smi
-        /// {0}smi
         /// </summary>
-        [UnitFallbackValues("{0} miles-scandinavian","{0} smi","{0}smi")]
+        [UnitFallbackValues(longFallback: "{0} miles-scandinavian",shortFallback: "{0} smi",narrowFallback: "{0}smi")]
         LengthMileScandinavian = 103,
 
         /// <summary>
         /// millimeters (length-millimeter)
-        /// {0} millimeters
-        /// {0} mm
-        /// {0}mm
         /// </summary>
-        [UnitFallbackValues("{0} millimeters","{0} mm","{0}mm")]
+        [UnitFallbackValues(longFallback: "{0} millimeters",shortFallback: "{0} mm",narrowFallback: "{0}mm")]
         LengthMillimeter = 104,
 
         /// <summary>
         /// nanometers (length-nanometer)
-        /// {0} nanometers
-        /// {0} nm
-        /// {0}nm
         /// </summary>
-        [UnitFallbackValues("{0} nanometers","{0} nm","{0}nm")]
+        [UnitFallbackValues(longFallback: "{0} nanometers",shortFallback: "{0} nm",narrowFallback: "{0}nm")]
         LengthNanometer = 105,
 
         /// <summary>
         /// nautical miles (length-nautical-mile)
-        /// {0} nautical miles
-        /// {0} nmi
-        /// {0}nmi
         /// </summary>
-        [UnitFallbackValues("{0} nautical miles","{0} nmi","{0}nmi")]
+        [UnitFallbackValues(longFallback: "{0} nautical miles",shortFallback: "{0} nmi",narrowFallback: "{0}nmi")]
         LengthNauticalMile = 106,
 
         /// <summary>
         /// parsecs (length-parsec)
-        /// {0} parsecs
-        /// {0} pc
-        /// {0}pc
         /// </summary>
-        [UnitFallbackValues("{0} parsecs","{0} pc","{0}pc")]
+        [UnitFallbackValues(longFallback: "{0} parsecs",shortFallback: "{0} pc",narrowFallback: "{0}pc")]
         LengthParsec = 107,
 
         /// <summary>
         /// picometers (length-picometer)
-        /// {0} picometers
-        /// {0} pm
-        /// {0}pm
         /// </summary>
-        [UnitFallbackValues("{0} picometers","{0} pm","{0}pm")]
+        [UnitFallbackValues(longFallback: "{0} picometers",shortFallback: "{0} pm",narrowFallback: "{0}pm")]
         LengthPicometer = 108,
 
         /// <summary>
         /// points (length-point)
-        /// {0} points
-        /// {0} pt
-        /// {0}pt
         /// </summary>
-        [UnitFallbackValues("{0} points","{0} pt","{0}pt")]
+        [UnitFallbackValues(longFallback: "{0} points",shortFallback: "{0} pt",narrowFallback: "{0}pt")]
         LengthPoint = 109,
 
         /// <summary>
         /// LengthRiJp (length-ri-jp)
-        /// {0} 里
-        /// {0} 里
-        /// {0}里
         /// </summary>
-        [UnitFallbackValues("{0} \u91CC","{0} 里","{0}里")]
+        [UnitFallbackValues(longFallback: "{0} \u91CC",shortFallback: "{0} 里",narrowFallback: "{0}里")]
         LengthRiJp = 110,
 
         /// <summary>
         /// LengthRin (length-rin)
-        /// {0} 厘
-        /// {0} 厘
-        /// {0}厘
         /// </summary>
-        [UnitFallbackValues("{0} \u5398","{0} 厘","{0}厘")]
+        [UnitFallbackValues(longFallback: "{0} \u5398",shortFallback: "{0} 厘",narrowFallback: "{0}厘")]
         LengthRin = 111,
 
         /// <summary>
         /// LengthShakuCloth (length-shaku-cloth)
-        /// {0} 鯨尺
-        /// {0} 鯨尺
-        /// {0}鯨尺
         /// </summary>
-        [UnitFallbackValues("{0} \u9BE8\u5C3A","{0} 鯨尺","{0}鯨尺")]
+        [UnitFallbackValues(longFallback: "{0} \u9BE8\u5C3A",shortFallback: "{0} 鯨尺",narrowFallback: "{0}鯨尺")]
         LengthShakuCloth = 112,
 
         /// <summary>
         /// LengthShakuLength (length-shaku-length)
-        /// {0} 尺
-        /// {0} 尺
-        /// {0}尺
         /// </summary>
-        [UnitFallbackValues("{0} \u5C3A","{0} 尺","{0}尺")]
+        [UnitFallbackValues(longFallback: "{0} \u5C3A",shortFallback: "{0} 尺",narrowFallback: "{0}尺")]
         LengthShakuLength = 113,
 
         /// <summary>
         /// solar radii (length-solar-radius)
-        /// {0} solar radii
-        /// {0} R☉
-        /// {0}R☉
         /// </summary>
-        [UnitFallbackValues("{0} solar radii","{0} R☉","{0}R☉")]
+        [UnitFallbackValues(longFallback: "{0} solar radii",shortFallback: "{0} R☉",narrowFallback: "{0}R☉")]
         LengthSolarRadius = 114,
 
         /// <summary>
         /// LengthSun (length-sun)
-        /// {0} 寸
-        /// {0} 寸
-        /// {0}寸
         /// </summary>
-        [UnitFallbackValues("{0} \u5BF8","{0} 寸","{0}寸")]
+        [UnitFallbackValues(longFallback: "{0} \u5BF8",shortFallback: "{0} 寸",narrowFallback: "{0}寸")]
         LengthSun = 115,
 
         /// <summary>
         /// yards (length-yard)
-        /// {0} yards
-        /// {0} yd
-        /// {0}yd
         /// </summary>
-        [UnitFallbackValues("{0} yards","{0} yd","{0}yd")]
+        [UnitFallbackValues(longFallback: "{0} yards",shortFallback: "{0} yd",narrowFallback: "{0}yd")]
         LengthYard = 116,
 
         /// <summary>
         /// candela (light-candela)
-        /// {0} candela
-        /// {0} cd
-        /// {0}cd
         /// </summary>
-        [UnitFallbackValues("{0} candela","{0} cd","{0}cd")]
+        [UnitFallbackValues(longFallback: "{0} candela",shortFallback: "{0} cd",narrowFallback: "{0}cd")]
         LightCandela = 117,
 
         /// <summary>
         /// lumen (light-lumen)
-        /// {0} lumen
-        /// {0} lm
-        /// {0}lm
         /// </summary>
-        [UnitFallbackValues("{0} lumen","{0} lm","{0}lm")]
+        [UnitFallbackValues(longFallback: "{0} lumen",shortFallback: "{0} lm",narrowFallback: "{0}lm")]
         LightLumen = 118,
 
         /// <summary>
         /// lux (light-lux)
-        /// {0} lux
-        /// {0} lx
-        /// {0}lx
         /// </summary>
-        [UnitFallbackValues("{0} lux","{0} lx","{0}lx")]
+        [UnitFallbackValues(longFallback: "{0} lux",shortFallback: "{0} lx",narrowFallback: "{0}lx")]
         LightLux = 119,
 
         /// <summary>
         /// solar luminosities (light-solar-luminosity)
-        /// {0} solar luminosities
-        /// {0} L☉
-        /// {0}L☉
         /// </summary>
-        [UnitFallbackValues("{0} solar luminosities","{0} L☉","{0}L☉")]
+        [UnitFallbackValues(longFallback: "{0} solar luminosities",shortFallback: "{0} L☉",narrowFallback: "{0}L☉")]
         LightSolarLuminosity = 120,
 
         /// <summary>
         /// carats (mass-carat)
-        /// {0} carats
-        /// {0} CD
-        /// {0}CD
         /// </summary>
-        [UnitFallbackValues("{0} carats","{0} CD","{0}CD")]
+        [UnitFallbackValues(longFallback: "{0} carats",shortFallback: "{0} CD",narrowFallback: "{0}CD")]
         MassCarat = 121,
 
         /// <summary>
         /// daltons (mass-dalton)
-        /// {0} daltons
-        /// {0} Da
-        /// {0}Da
         /// </summary>
-        [UnitFallbackValues("{0} daltons","{0} Da","{0}Da")]
+        [UnitFallbackValues(longFallback: "{0} daltons",shortFallback: "{0} Da",narrowFallback: "{0}Da")]
         MassDalton = 122,
 
         /// <summary>
         /// Earth masses (mass-earth-mass)
-        /// {0} Earth masses
-        /// {0} M⊕
-        /// {0}M⊕
         /// </summary>
-        [UnitFallbackValues("{0} Earth masses","{0} M⊕","{0}M⊕")]
+        [UnitFallbackValues(longFallback: "{0} Earth masses",shortFallback: "{0} M⊕",narrowFallback: "{0}M⊕")]
         MassEarthMass = 123,
 
         /// <summary>
         /// MassFun (mass-fun)
-        /// {0} 分 - 質量
-        /// {0} 分 - 質量
-        /// {0}分
         /// </summary>
-        [UnitFallbackValues("{0} \u5206 - \u8CEA\u91CF","{0} 分 - 質量","{0}分")]
+        [UnitFallbackValues(longFallback: "{0} \u5206 - \u8CEA\u91CF",shortFallback: "{0} 分 - 質量",narrowFallback: "{0}分")]
         MassFun = 124,
 
         /// <summary>
         /// grains (mass-grain)
-        /// {0} grains
-        /// {0} gr
-        /// {0}gr
         /// </summary>
-        [UnitFallbackValues("{0} grains","{0} gr","{0}gr")]
+        [UnitFallbackValues(longFallback: "{0} grains",shortFallback: "{0} gr",narrowFallback: "{0}gr")]
         MassGrain = 125,
 
         /// <summary>
         /// grams (mass-gram)
-        /// {0} grams
-        /// {0} g
-        /// {0}g
         /// </summary>
-        [UnitFallbackValues("{0} grams","{0} g","{0}g")]
+        [UnitFallbackValues(longFallback: "{0} grams",shortFallback: "{0} g",narrowFallback: "{0}g")]
         MassGram = 126,
 
         /// <summary>
         /// kilograms (mass-kilogram)
-        /// {0} kilograms
-        /// {0} kg
-        /// {0}kg
         /// </summary>
-        [UnitFallbackValues("{0} kilograms","{0} kg","{0}kg")]
+        [UnitFallbackValues(longFallback: "{0} kilograms",shortFallback: "{0} kg",narrowFallback: "{0}kg")]
         MassKilogram = 127,
 
         /// <summary>
         /// micrograms (mass-microgram)
-        /// {0} micrograms
-        /// {0} μg
-        /// {0}μg
         /// </summary>
-        [UnitFallbackValues("{0} micrograms","{0} μg","{0}μg")]
+        [UnitFallbackValues(longFallback: "{0} micrograms",shortFallback: "{0} μg",narrowFallback: "{0}μg")]
         MassMicrogram = 128,
 
         /// <summary>
         /// milligrams (mass-milligram)
-        /// {0} milligrams
-        /// {0} mg
-        /// {0}mg
         /// </summary>
-        [UnitFallbackValues("{0} milligrams","{0} mg","{0}mg")]
+        [UnitFallbackValues(longFallback: "{0} milligrams",shortFallback: "{0} mg",narrowFallback: "{0}mg")]
         MassMilligram = 129,
 
         /// <summary>
         /// ounces (mass-ounce)
-        /// {0} ounces
-        /// {0} oz
-        /// {0}oz
         /// </summary>
-        [UnitFallbackValues("{0} ounces","{0} oz","{0}oz")]
+        [UnitFallbackValues(longFallback: "{0} ounces",shortFallback: "{0} oz",narrowFallback: "{0}oz")]
         MassOunce = 130,
 
         /// <summary>
         /// troy ounces (mass-ounce-troy)
-        /// {0} troy ounces
-        /// {0} oz t
-        /// {0}oz t
         /// </summary>
-        [UnitFallbackValues("{0} troy ounces","{0} oz t","{0}oz t")]
+        [UnitFallbackValues(longFallback: "{0} troy ounces",shortFallback: "{0} oz t",narrowFallback: "{0}oz t")]
         MassOunceTroy = 131,
 
         /// <summary>
         /// pounds (mass-pound)
-        /// {0} pounds
-        /// {0} lb
-        /// {0}#
         /// </summary>
-        [UnitFallbackValues("{0} pounds","{0} lb","{0}#")]
+        [UnitFallbackValues(longFallback: "{0} pounds",shortFallback: "{0} lb",narrowFallback: "{0}#")]
         MassPound = 132,
 
         /// <summary>
         /// solar masses (mass-solar-mass)
-        /// {0} solar masses
-        /// {0} M☉
-        /// {0}M☉
         /// </summary>
-        [UnitFallbackValues("{0} solar masses","{0} M☉","{0}M☉")]
+        [UnitFallbackValues(longFallback: "{0} solar masses",shortFallback: "{0} M☉",narrowFallback: "{0}M☉")]
         MassSolarMass = 133,
 
         /// <summary>
         /// stones (mass-stone)
-        /// {0} stones
-        /// {0} st
-        /// {0}st
         /// </summary>
-        [UnitFallbackValues("{0} stones","{0} st","{0}st")]
+        [UnitFallbackValues(longFallback: "{0} stones",shortFallback: "{0} st",narrowFallback: "{0}st")]
         MassStone = 134,
 
         /// <summary>
         /// tons (mass-ton)
-        /// {0} tons
-        /// {0} tn
-        /// {0}tn
         /// </summary>
-        [UnitFallbackValues("{0} tons","{0} tn","{0}tn")]
+        [UnitFallbackValues(longFallback: "{0} tons",shortFallback: "{0} tn",narrowFallback: "{0}tn")]
         MassTon = 135,
 
         /// <summary>
         /// metric tons (mass-tonne)
-        /// {0} metric tons
-        /// {0} t
-        /// {0}t
         /// </summary>
-        [UnitFallbackValues("{0} metric tons","{0} t","{0}t")]
+        [UnitFallbackValues(longFallback: "{0} metric tons",shortFallback: "{0} t",narrowFallback: "{0}t")]
         MassTonne = 136,
 
         /// <summary>
         /// gigawatts (power-gigawatt)
-        /// {0} gigawatts
-        /// {0} GW
-        /// {0}GW
         /// </summary>
-        [UnitFallbackValues("{0} gigawatts","{0} GW","{0}GW")]
+        [UnitFallbackValues(longFallback: "{0} gigawatts",shortFallback: "{0} GW",narrowFallback: "{0}GW")]
         PowerGigawatt = 137,
 
         /// <summary>
         /// horsepower (power-horsepower)
-        /// {0} horsepower
-        /// {0} hp
-        /// {0}hp
         /// </summary>
-        [UnitFallbackValues("{0} horsepower","{0} hp","{0}hp")]
+        [UnitFallbackValues(longFallback: "{0} horsepower",shortFallback: "{0} hp",narrowFallback: "{0}hp")]
         PowerHorsepower = 138,
 
         /// <summary>
         /// kilowatts (power-kilowatt)
-        /// {0} kilowatts
-        /// {0} kW
-        /// {0}kW
         /// </summary>
-        [UnitFallbackValues("{0} kilowatts","{0} kW","{0}kW")]
+        [UnitFallbackValues(longFallback: "{0} kilowatts",shortFallback: "{0} kW",narrowFallback: "{0}kW")]
         PowerKilowatt = 139,
 
         /// <summary>
         /// megawatts (power-megawatt)
-        /// {0} megawatts
-        /// {0} MW
-        /// {0}MW
         /// </summary>
-        [UnitFallbackValues("{0} megawatts","{0} MW","{0}MW")]
+        [UnitFallbackValues(longFallback: "{0} megawatts",shortFallback: "{0} MW",narrowFallback: "{0}MW")]
         PowerMegawatt = 140,
 
         /// <summary>
         /// milliwatts (power-milliwatt)
-        /// {0} milliwatts
-        /// {0} mW
-        /// {0}mW
         /// </summary>
-        [UnitFallbackValues("{0} milliwatts","{0} mW","{0}mW")]
+        [UnitFallbackValues(longFallback: "{0} milliwatts",shortFallback: "{0} mW",narrowFallback: "{0}mW")]
         PowerMilliwatt = 141,
 
         /// <summary>
         /// watts (power-watt)
-        /// {0} watts
-        /// {0} W
-        /// {0}W
         /// </summary>
-        [UnitFallbackValues("{0} watts","{0} W","{0}W")]
+        [UnitFallbackValues(longFallback: "{0} watts",shortFallback: "{0} W",narrowFallback: "{0}W")]
         PowerWatt = 142,
 
         /// <summary>
         /// atmospheres (pressure-atmosphere)
-        /// {0} atmospheres
-        /// {0} atm
-        /// {0}atm
         /// </summary>
-        [UnitFallbackValues("{0} atmospheres","{0} atm","{0}atm")]
+        [UnitFallbackValues(longFallback: "{0} atmospheres",shortFallback: "{0} atm",narrowFallback: "{0}atm")]
         PressureAtmosphere = 143,
 
         /// <summary>
         /// bars (pressure-bar)
-        /// {0} bars
-        /// {0} bar
-        /// {0}bar
         /// </summary>
-        [UnitFallbackValues("{0} bars","{0} bar","{0}bar")]
+        [UnitFallbackValues(longFallback: "{0} bars",shortFallback: "{0} bar",narrowFallback: "{0}bar")]
         PressureBar = 144,
 
         /// <summary>
         /// of gasoline equivalent (pressure-gasoline-energy-density)
-        /// {0} of gasoline equivalent
-        /// {0} gas-equiv
-        /// {0}gas-equiv
         /// </summary>
-        [UnitFallbackValues("{0} of gasoline equivalent","{0} gas-equiv","{0}gas-equiv")]
+        [UnitFallbackValues(longFallback: "{0} of gasoline equivalent",shortFallback: "{0} gas-equiv",narrowFallback: "{0}gas-equiv")]
         PressureGasolineEnergyDensity = 145,
 
         /// <summary>
         /// hectopascals (pressure-hectopascal)
-        /// {0} hectopascals
-        /// {0} hPa
-        /// {0}hPa
         /// </summary>
-        [UnitFallbackValues("{0} hectopascals","{0} hPa","{0}hPa")]
+        [UnitFallbackValues(longFallback: "{0} hectopascals",shortFallback: "{0} hPa",narrowFallback: "{0}hPa")]
         PressureHectopascal = 146,
 
         /// <summary>
         /// inches of mercury (pressure-inch-ofhg)
-        /// {0} inches of mercury
-        /// {0} inHg
-        /// {0}″ Hg
         /// </summary>
-        [UnitFallbackValues("{0} inches of mercury","{0} inHg","{0}″ Hg")]
+        [UnitFallbackValues(longFallback: "{0} inches of mercury",shortFallback: "{0} inHg",narrowFallback: "{0}″ Hg")]
         PressureInchOfhg = 147,
 
         /// <summary>
         /// kilopascals (pressure-kilopascal)
-        /// {0} kilopascals
-        /// {0} kPa
-        /// {0}kPa
         /// </summary>
-        [UnitFallbackValues("{0} kilopascals","{0} kPa","{0}kPa")]
+        [UnitFallbackValues(longFallback: "{0} kilopascals",shortFallback: "{0} kPa",narrowFallback: "{0}kPa")]
         PressureKilopascal = 148,
 
         /// <summary>
         /// megapascals (pressure-megapascal)
-        /// {0} megapascals
-        /// {0} MPa
-        /// {0}MPa
         /// </summary>
-        [UnitFallbackValues("{0} megapascals","{0} MPa","{0}MPa")]
+        [UnitFallbackValues(longFallback: "{0} megapascals",shortFallback: "{0} MPa",narrowFallback: "{0}MPa")]
         PressureMegapascal = 149,
 
         /// <summary>
         /// millibars (pressure-millibar)
-        /// {0} millibars
-        /// {0} mbar
-        /// {0}mb
         /// </summary>
-        [UnitFallbackValues("{0} millibars","{0} mbar","{0}mb")]
+        [UnitFallbackValues(longFallback: "{0} millibars",shortFallback: "{0} mbar",narrowFallback: "{0}mb")]
         PressureMillibar = 150,
 
         /// <summary>
         /// millimeters of mercury (pressure-millimeter-ofhg)
-        /// {0} millimeters of mercury
-        /// {0} mmHg
-        /// {0}mmHg
         /// </summary>
-        [UnitFallbackValues("{0} millimeters of mercury","{0} mmHg","{0}mmHg")]
+        [UnitFallbackValues(longFallback: "{0} millimeters of mercury",shortFallback: "{0} mmHg",narrowFallback: "{0}mmHg")]
         PressureMillimeterOfhg = 151,
 
         /// <summary>
         /// pascals (pressure-pascal)
-        /// {0} pascals
-        /// {0} Pa
-        /// {0}Pa
         /// </summary>
-        [UnitFallbackValues("{0} pascals","{0} Pa","{0}Pa")]
+        [UnitFallbackValues(longFallback: "{0} pascals",shortFallback: "{0} Pa",narrowFallback: "{0}Pa")]
         PressurePascal = 152,
 
         /// <summary>
         /// pounds-force per square inch (pressure-pound-force-per-square-inch)
-        /// {0} pounds-force per square inch
-        /// {0} psi
-        /// {0}psi
         /// </summary>
-        [UnitFallbackValues("{0} pounds-force per square inch","{0} psi","{0}psi")]
+        [UnitFallbackValues(longFallback: "{0} pounds-force per square inch",shortFallback: "{0} psi",narrowFallback: "{0}psi")]
         PressurePoundForcePerSquareInch = 153,
 
         /// <summary>
         /// Beaufort (speed-beaufort)
-        /// Beaufort {0}
-        /// B {0}
-        /// B{0}
         /// </summary>
-        [UnitFallbackValues("Beaufort {0}","B {0}","B{0}")]
+        [UnitFallbackValues(longFallback: "Beaufort {0}",shortFallback: "B {0}",narrowFallback: "B{0}")]
         SpeedBeaufort = 154,
 
         /// <summary>
         /// kilometers per hour (speed-kilometer-per-hour)
-        /// {0} kilometers per hour
-        /// {0} km/h
-        /// {0}km/h
         /// </summary>
-        [UnitFallbackValues("{0} kilometers per hour","{0} km/h","{0}km/h")]
+        [UnitFallbackValues(longFallback: "{0} kilometers per hour",shortFallback: "{0} km/h",narrowFallback: "{0}km/h")]
         SpeedKilometerPerHour = 155,
 
         /// <summary>
         /// knots (speed-knot)
-        /// {0} knots
-        /// {0} kn
-        /// {0}kn
         /// </summary>
-        [UnitFallbackValues("{0} knots","{0} kn","{0}kn")]
+        [UnitFallbackValues(longFallback: "{0} knots",shortFallback: "{0} kn",narrowFallback: "{0}kn")]
         SpeedKnot = 156,
 
         /// <summary>
         /// light (speed-light-speed)
-        /// {0} light
-        /// {0} light
-        /// {0}light
         /// </summary>
-        [UnitFallbackValues("{0} light","{0} light","{0}light")]
+        [UnitFallbackValues(longFallback: "{0} light",shortFallback: "{0} light",narrowFallback: "{0}light")]
         SpeedLightSpeed = 157,
 
         /// <summary>
         /// meters per second (speed-meter-per-second)
-        /// {0} meters per second
-        /// {0} m/s
-        /// {0}m/s
         /// </summary>
-        [UnitFallbackValues("{0} meters per second","{0} m/s","{0}m/s")]
+        [UnitFallbackValues(longFallback: "{0} meters per second",shortFallback: "{0} m/s",narrowFallback: "{0}m/s")]
         SpeedMeterPerSecond = 158,
 
         /// <summary>
         /// miles per hour (speed-mile-per-hour)
-        /// {0} miles per hour
-        /// {0} mph
-        /// {0}mph
         /// </summary>
-        [UnitFallbackValues("{0} miles per hour","{0} mph","{0}mph")]
+        [UnitFallbackValues(longFallback: "{0} miles per hour",shortFallback: "{0} mph",narrowFallback: "{0}mph")]
         SpeedMilePerHour = 159,
 
         /// <summary>
         /// degrees Celsius (temperature-celsius)
-        /// {0} degrees Celsius
-        /// {0}°C
-        /// {0}°C
         /// </summary>
-        [UnitFallbackValues("{0} degrees Celsius","{0}°C","{0}°C")]
+        [UnitFallbackValues(longFallback: "{0} degrees Celsius",shortFallback: "{0}°C",narrowFallback: "{0}°C")]
         TemperatureCelsius = 160,
 
         /// <summary>
         /// degrees Fahrenheit (temperature-fahrenheit)
-        /// {0} degrees Fahrenheit
-        /// {0}°F
-        /// {0}°
         /// </summary>
-        [UnitFallbackValues("{0} degrees Fahrenheit","{0}°F","{0}°")]
+        [UnitFallbackValues(longFallback: "{0} degrees Fahrenheit",shortFallback: "{0}°F",narrowFallback: "{0}°")]
         TemperatureFahrenheit = 161,
 
         /// <summary>
         /// degrees temperature (temperature-generic)
-        /// {0} degrees temperature
-        /// {0}°
-        /// {0}°
         /// </summary>
-        [UnitFallbackValues("{0} degrees temperature","{0}°","{0}°")]
+        [UnitFallbackValues(longFallback: "{0} degrees temperature",shortFallback: "{0}°",narrowFallback: "{0}°")]
         TemperatureGeneric = 162,
 
         /// <summary>
         /// kelvins (temperature-kelvin)
-        /// {0} kelvins
-        /// {0} K
-        /// {0}K
         /// </summary>
-        [UnitFallbackValues("{0} kelvins","{0} K","{0}K")]
+        [UnitFallbackValues(longFallback: "{0} kelvins",shortFallback: "{0} K",narrowFallback: "{0}K")]
         TemperatureKelvin = 163,
 
         /// <summary>
         /// newton-meters (torque-newton-meter)
-        /// {0} newton-meters
-        /// {0} N⋅m
-        /// {0}N⋅m
         /// </summary>
-        [UnitFallbackValues("{0} newton-meters","{0} N⋅m","{0}N⋅m")]
+        [UnitFallbackValues(longFallback: "{0} newton-meters",shortFallback: "{0} N⋅m",narrowFallback: "{0}N⋅m")]
         TorqueNewtonMeter = 164,
 
         /// <summary>
         /// pound-force-feet (torque-pound-force-foot)
-        /// {0} pound-force-feet
-        /// {0} lbf⋅ft
-        /// {0}lbf⋅ft
         /// </summary>
-        [UnitFallbackValues("{0} pound-force-feet","{0} lbf⋅ft","{0}lbf⋅ft")]
+        [UnitFallbackValues(longFallback: "{0} pound-force-feet",shortFallback: "{0} lbf⋅ft",narrowFallback: "{0}lbf⋅ft")]
         TorquePoundForceFoot = 165,
 
         /// <summary>
         /// acre-feet (volume-acre-foot)
-        /// {0} acre-feet
-        /// {0} ac ft
-        /// {0}ac ft
         /// </summary>
-        [UnitFallbackValues("{0} acre-feet","{0} ac ft","{0}ac ft")]
+        [UnitFallbackValues(longFallback: "{0} acre-feet",shortFallback: "{0} ac ft",narrowFallback: "{0}ac ft")]
         VolumeAcreFoot = 166,
 
         /// <summary>
         /// barrels (volume-barrel)
-        /// {0} barrels
-        /// {0} bbl
-        /// {0}bbl
         /// </summary>
-        [UnitFallbackValues("{0} barrels","{0} bbl","{0}bbl")]
+        [UnitFallbackValues(longFallback: "{0} barrels",shortFallback: "{0} bbl",narrowFallback: "{0}bbl")]
         VolumeBarrel = 167,
 
         /// <summary>
         /// bushels (volume-bushel)
-        /// {0} bushels
-        /// {0} bu
-        /// {0}bu
         /// </summary>
-        [UnitFallbackValues("{0} bushels","{0} bu","{0}bu")]
+        [UnitFallbackValues(longFallback: "{0} bushels",shortFallback: "{0} bu",narrowFallback: "{0}bu")]
         VolumeBushel = 168,
 
         /// <summary>
         /// centiliters (volume-centiliter)
-        /// {0} centiliters
-        /// {0} cL
-        /// {0}cL
         /// </summary>
-        [UnitFallbackValues("{0} centiliters","{0} cL","{0}cL")]
+        [UnitFallbackValues(longFallback: "{0} centiliters",shortFallback: "{0} cL",narrowFallback: "{0}cL")]
         VolumeCentiliter = 169,
 
         /// <summary>
         /// cubic centimeters (volume-cubic-centimeter)
-        /// {0} cubic centimeters
-        /// {0} cm³
-        /// {0}cm³
         /// </summary>
-        [UnitFallbackValues("{0} cubic centimeters","{0} cm³","{0}cm³")]
+        [UnitFallbackValues(longFallback: "{0} cubic centimeters",shortFallback: "{0} cm³",narrowFallback: "{0}cm³")]
         VolumeCubicCentimeter = 170,
 
         /// <summary>
         /// cubic feet (volume-cubic-foot)
-        /// {0} cubic feet
-        /// {0} ft³
-        /// {0}ft³
         /// </summary>
-        [UnitFallbackValues("{0} cubic feet","{0} ft³","{0}ft³")]
+        [UnitFallbackValues(longFallback: "{0} cubic feet",shortFallback: "{0} ft³",narrowFallback: "{0}ft³")]
         VolumeCubicFoot = 171,
 
         /// <summary>
         /// cubic inches (volume-cubic-inch)
-        /// {0} cubic inches
-        /// {0} in³
-        /// {0}in³
         /// </summary>
-        [UnitFallbackValues("{0} cubic inches","{0} in³","{0}in³")]
+        [UnitFallbackValues(longFallback: "{0} cubic inches",shortFallback: "{0} in³",narrowFallback: "{0}in³")]
         VolumeCubicInch = 172,
 
         /// <summary>
         /// cubic kilometers (volume-cubic-kilometer)
-        /// {0} cubic kilometers
-        /// {0} km³
-        /// {0}km³
         /// </summary>
-        [UnitFallbackValues("{0} cubic kilometers","{0} km³","{0}km³")]
+        [UnitFallbackValues(longFallback: "{0} cubic kilometers",shortFallback: "{0} km³",narrowFallback: "{0}km³")]
         VolumeCubicKilometer = 173,
 
         /// <summary>
         /// cubic meters (volume-cubic-meter)
-        /// {0} cubic meters
-        /// {0} m³
-        /// {0}m³
         /// </summary>
-        [UnitFallbackValues("{0} cubic meters","{0} m³","{0}m³")]
+        [UnitFallbackValues(longFallback: "{0} cubic meters",shortFallback: "{0} m³",narrowFallback: "{0}m³")]
         VolumeCubicMeter = 174,
 
         /// <summary>
         /// cubic miles (volume-cubic-mile)
-        /// {0} cubic miles
-        /// {0} mi³
-        /// {0}mi³
         /// </summary>
-        [UnitFallbackValues("{0} cubic miles","{0} mi³","{0}mi³")]
+        [UnitFallbackValues(longFallback: "{0} cubic miles",shortFallback: "{0} mi³",narrowFallback: "{0}mi³")]
         VolumeCubicMile = 175,
 
         /// <summary>
         /// cubic yards (volume-cubic-yard)
-        /// {0} cubic yards
-        /// {0} yd³
-        /// {0}yd³
         /// </summary>
-        [UnitFallbackValues("{0} cubic yards","{0} yd³","{0}yd³")]
+        [UnitFallbackValues(longFallback: "{0} cubic yards",shortFallback: "{0} yd³",narrowFallback: "{0}yd³")]
         VolumeCubicYard = 176,
 
         /// <summary>
         /// cups (volume-cup)
-        /// {0} cups
-        /// {0} c
-        /// {0}c
         /// </summary>
-        [UnitFallbackValues("{0} cups","{0} c","{0}c")]
+        [UnitFallbackValues(longFallback: "{0} cups",shortFallback: "{0} c",narrowFallback: "{0}c")]
         VolumeCup = 177,
 
         /// <summary>
         /// VolumeCupJp (volume-cup-jp)
-        /// {0} カップ
-        /// {0} カップ
-        /// {0}カップ
         /// </summary>
-        [UnitFallbackValues("{0} \u30AB\u30C3\u30D7","{0} カップ","{0}カップ")]
+        [UnitFallbackValues(longFallback: "{0} \u30AB\u30C3\u30D7",shortFallback: "{0} カップ",narrowFallback: "{0}カップ")]
         VolumeCupJp = 178,
 
         /// <summary>
         /// metric cups (volume-cup-metric)
-        /// {0} metric cups
-        /// {0} mc
-        /// {0}mc
         /// </summary>
-        [UnitFallbackValues("{0} metric cups","{0} mc","{0}mc")]
+        [UnitFallbackValues(longFallback: "{0} metric cups",shortFallback: "{0} mc",narrowFallback: "{0}mc")]
         VolumeCupMetric = 179,
 
         /// <summary>
         /// deciliters (volume-deciliter)
-        /// {0} deciliters
-        /// {0} dL
-        /// {0}dL
         /// </summary>
-        [UnitFallbackValues("{0} deciliters","{0} dL","{0}dL")]
+        [UnitFallbackValues(longFallback: "{0} deciliters",shortFallback: "{0} dL",narrowFallback: "{0}dL")]
         VolumeDeciliter = 180,
 
         /// <summary>
         /// dessert spoons (volume-dessert-spoon)
-        /// {0} dessert spoons
-        /// {0} dsp
-        /// {0}dsp
         /// </summary>
-        [UnitFallbackValues("{0} dessert spoons","{0} dsp","{0}dsp")]
+        [UnitFallbackValues(longFallback: "{0} dessert spoons",shortFallback: "{0} dsp",narrowFallback: "{0}dsp")]
         VolumeDessertSpoon = 181,
 
         /// <summary>
         /// Imp. dessert spoons (volume-dessert-spoon-imperial)
-        /// {0} Imp. dessert spoons
-        /// {0} dsp-Imp.
-        /// {0}dsp-Imp
         /// </summary>
-        [UnitFallbackValues("{0} Imp. dessert spoons","{0} dsp-Imp.","{0}dsp-Imp")]
+        [UnitFallbackValues(longFallback: "{0} Imp. dessert spoons",shortFallback: "{0} dsp-Imp.",narrowFallback: "{0}dsp-Imp")]
         VolumeDessertSpoonImperial = 182,
 
         /// <summary>
         /// drams (volume-dram)
-        /// {0} drams
-        /// {0} drams
-        /// {0}fl.dr.
         /// </summary>
-        [UnitFallbackValues("{0} drams","{0} drams","{0}fl.dr.")]
+        [UnitFallbackValues(longFallback: "{0} drams",shortFallback: "{0} drams",narrowFallback: "{0}fl.dr.")]
         VolumeDram = 183,
 
         /// <summary>
         /// drops (volume-drop)
-        /// {0} drops
-        /// {0} drdrops
-        /// {0}dr
         /// </summary>
-        [UnitFallbackValues("{0} drops","{0} drdrops","{0}dr")]
+        [UnitFallbackValues(longFallback: "{0} drops",shortFallback: "{0} drdrops",narrowFallback: "{0}dr")]
         VolumeDrop = 184,
 
         /// <summary>
         /// fluid ounces (volume-fluid-ounce)
-        /// {0} fluid ounces
-        /// {0} fl oz
-        /// {0}fl oz
         /// </summary>
-        [UnitFallbackValues("{0} fluid ounces","{0} fl oz","{0}fl oz")]
+        [UnitFallbackValues(longFallback: "{0} fluid ounces",shortFallback: "{0} fl oz",narrowFallback: "{0}fl oz")]
         VolumeFluidOunce = 185,
 
         /// <summary>
         /// Imp. fluid ounces (volume-fluid-ounce-imperial)
-        /// {0} Imp. fluid ounces
-        /// {0} fl oz Imp.
-        /// {0}fl oz Im
         /// </summary>
-        [UnitFallbackValues("{0} Imp. fluid ounces","{0} fl oz Imp.","{0}fl oz Im")]
+        [UnitFallbackValues(longFallback: "{0} Imp. fluid ounces",shortFallback: "{0} fl oz Imp.",narrowFallback: "{0}fl oz Im")]
         VolumeFluidOunceImperial = 186,
 
         /// <summary>
         /// gallons (volume-gallon)
-        /// {0} gallons
-        /// {0} gal
-        /// {0}gal
         /// </summary>
-        [UnitFallbackValues("{0} gallons","{0} gal","{0}gal")]
+        [UnitFallbackValues(longFallback: "{0} gallons",shortFallback: "{0} gal",narrowFallback: "{0}gal")]
         VolumeGallon = 187,
 
         /// <summary>
         /// Imp. gallons (volume-gallon-imperial)
-        /// {0} Imp. gallons
-        /// {0} gal Imp.
-        /// {0}galIm
         /// </summary>
-        [UnitFallbackValues("{0} Imp. gallons","{0} gal Imp.","{0}galIm")]
+        [UnitFallbackValues(longFallback: "{0} Imp. gallons",shortFallback: "{0} gal Imp.",narrowFallback: "{0}galIm")]
         VolumeGallonImperial = 188,
 
         /// <summary>
         /// hectoliters (volume-hectoliter)
-        /// {0} hectoliters
-        /// {0} hL
-        /// {0}hL
         /// </summary>
-        [UnitFallbackValues("{0} hectoliters","{0} hL","{0}hL")]
+        [UnitFallbackValues(longFallback: "{0} hectoliters",shortFallback: "{0} hL",narrowFallback: "{0}hL")]
         VolumeHectoliter = 189,
 
         /// <summary>
         /// jiggers (volume-jigger)
-        /// {0} jiggers
-        /// {0} jiggers
-        /// {0}jigger
         /// </summary>
-        [UnitFallbackValues("{0} jiggers","{0} jiggers","{0}jigger")]
+        [UnitFallbackValues(longFallback: "{0} jiggers",shortFallback: "{0} jiggers",narrowFallback: "{0}jigger")]
         VolumeJigger = 190,
 
         /// <summary>
         /// VolumeKoku (volume-koku)
-        /// {0} 石
-        /// {0} 石
-        /// {0}石
         /// </summary>
-        [UnitFallbackValues("{0} \u77F3","{0} 石","{0}石")]
+        [UnitFallbackValues(longFallback: "{0} \u77F3",shortFallback: "{0} 石",narrowFallback: "{0}石")]
         VolumeKoku = 191,
 
         /// <summary>
         /// VolumeKosaji (volume-kosaji)
-        /// 小さじ {0}
-        /// 小さじ {0}
-        /// 小さじ{0}
         /// </summary>
-        [UnitFallbackValues("\u5C0F\u3055\u3058 {0}","小さじ {0}","小さじ{0}")]
+        [UnitFallbackValues(longFallback: "\u5C0F\u3055\u3058 {0}",shortFallback: "小さじ {0}",narrowFallback: "小さじ{0}")]
         VolumeKosaji = 192,
 
         /// <summary>
         /// liters (volume-liter)
-        /// {0} liters
-        /// {0} L
-        /// {0}L
         /// </summary>
-        [UnitFallbackValues("{0} liters","{0} L","{0}L")]
+        [UnitFallbackValues(longFallback: "{0} liters",shortFallback: "{0} L",narrowFallback: "{0}L")]
         VolumeLiter = 193,
 
         /// <summary>
         /// megaliters (volume-megaliter)
-        /// {0} megaliters
-        /// {0} ML
-        /// {0}ML
         /// </summary>
-        [UnitFallbackValues("{0} megaliters","{0} ML","{0}ML")]
+        [UnitFallbackValues(longFallback: "{0} megaliters",shortFallback: "{0} ML",narrowFallback: "{0}ML")]
         VolumeMegaliter = 194,
 
         /// <summary>
         /// milliliters (volume-milliliter)
-        /// {0} milliliters
-        /// {0} mL
-        /// {0}mL
         /// </summary>
-        [UnitFallbackValues("{0} milliliters","{0} mL","{0}mL")]
+        [UnitFallbackValues(longFallback: "{0} milliliters",shortFallback: "{0} mL",narrowFallback: "{0}mL")]
         VolumeMilliliter = 195,
 
         /// <summary>
         /// VolumeOsaji (volume-osaji)
-        /// 大さじ {0}
-        /// 大さじ {0}
-        /// 大さじ{0}
         /// </summary>
-        [UnitFallbackValues("\u5927\u3055\u3058 {0}","大さじ {0}","大さじ{0}")]
+        [UnitFallbackValues(longFallback: "\u5927\u3055\u3058 {0}",shortFallback: "大さじ {0}",narrowFallback: "大さじ{0}")]
         VolumeOsaji = 196,
 
         /// <summary>
         /// pinches (volume-pinch)
-        /// {0} pinches
-        /// {0} pn
-        /// {0}pn
         /// </summary>
-        [UnitFallbackValues("{0} pinches","{0} pn","{0}pn")]
+        [UnitFallbackValues(longFallback: "{0} pinches",shortFallback: "{0} pn",narrowFallback: "{0}pn")]
         VolumePinch = 197,
 
         /// <summary>
         /// pints (volume-pint)
-        /// {0} pints
-        /// {0} pt
-        /// {0}pt
         /// </summary>
-        [UnitFallbackValues("{0} pints","{0} pt","{0}pt")]
+        [UnitFallbackValues(longFallback: "{0} pints",shortFallback: "{0} pt",narrowFallback: "{0}pt")]
         VolumePint = 198,
 
         /// <summary>
         /// metric pints (volume-pint-metric)
-        /// {0} metric pints
-        /// {0} mpt
-        /// {0}mpt
         /// </summary>
-        [UnitFallbackValues("{0} metric pints","{0} mpt","{0}mpt")]
+        [UnitFallbackValues(longFallback: "{0} metric pints",shortFallback: "{0} mpt",narrowFallback: "{0}mpt")]
         VolumePintMetric = 199,
 
         /// <summary>
         /// quarts (volume-quart)
-        /// {0} quarts
-        /// {0} qt
-        /// {0}qt
         /// </summary>
-        [UnitFallbackValues("{0} quarts","{0} qt","{0}qt")]
+        [UnitFallbackValues(longFallback: "{0} quarts",shortFallback: "{0} qt",narrowFallback: "{0}qt")]
         VolumeQuart = 200,
 
         /// <summary>
         /// Imp. quarts (volume-quart-imperial)
-        /// {0} Imp. quarts
-        /// {0} qt-Imp.
-        /// {0}qt-Imp.
         /// </summary>
-        [UnitFallbackValues("{0} Imp. quarts","{0} qt-Imp.","{0}qt-Imp.")]
+        [UnitFallbackValues(longFallback: "{0} Imp. quarts",shortFallback: "{0} qt-Imp.",narrowFallback: "{0}qt-Imp.")]
         VolumeQuartImperial = 201,
 
         /// <summary>
         /// VolumeSai (volume-sai)
-        /// {0} 才
-        /// {0} 才
-        /// {0}才
         /// </summary>
-        [UnitFallbackValues("{0} \u624D","{0} 才","{0}才")]
+        [UnitFallbackValues(longFallback: "{0} \u624D",shortFallback: "{0} 才",narrowFallback: "{0}才")]
         VolumeSai = 202,
 
         /// <summary>
         /// VolumeShaku (volume-shaku)
-        /// {0} 勺
-        /// {0} 勺
-        /// {0}勺
         /// </summary>
-        [UnitFallbackValues("{0} \u52FA","{0} 勺","{0}勺")]
+        [UnitFallbackValues(longFallback: "{0} \u52FA",shortFallback: "{0} 勺",narrowFallback: "{0}勺")]
         VolumeShaku = 203,
 
         /// <summary>
         /// tablespoons (volume-tablespoon)
-        /// {0} tablespoons
-        /// {0} tbsp
-        /// {0}tbsp
         /// </summary>
-        [UnitFallbackValues("{0} tablespoons","{0} tbsp","{0}tbsp")]
+        [UnitFallbackValues(longFallback: "{0} tablespoons",shortFallback: "{0} tbsp",narrowFallback: "{0}tbsp")]
         VolumeTablespoon = 204,
 
         /// <summary>
         /// teaspoons (volume-teaspoon)
-        /// {0} teaspoons
-        /// {0} tsp
-        /// {0}tsp
         /// </summary>
-        [UnitFallbackValues("{0} teaspoons","{0} tsp","{0}tsp")]
+        [UnitFallbackValues(longFallback: "{0} teaspoons",shortFallback: "{0} tsp",narrowFallback: "{0}tsp")]
         VolumeTeaspoon = 205,
 
         /// <summary>
         /// VolumeToJp (volume-to-jp)
-        /// {0} 斗
-        /// {0} 斗
-        /// {0}斗
         /// </summary>
-        [UnitFallbackValues("{0} \u6597","{0} 斗","{0}斗")]
+        [UnitFallbackValues(longFallback: "{0} \u6597",shortFallback: "{0} 斗",narrowFallback: "{0}斗")]
         VolumeToJp = 206,
     }
 }

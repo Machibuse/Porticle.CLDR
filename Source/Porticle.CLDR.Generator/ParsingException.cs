@@ -1,3 +1,5 @@
+namespace Porticle.CLDR.Generator;
+
 public class ParsingException : Exception
 {
     public ParsingException()

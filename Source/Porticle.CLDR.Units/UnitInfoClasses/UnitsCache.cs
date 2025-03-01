@@ -1,5 +1,4 @@
 ﻿using System.Collections.Concurrent;
-using System.Collections.Generic;
 using Porticle.CLDR.Units.Serialization;
 
 namespace Porticle.CLDR.Units.UnitInfoClasses
@@ -10,7 +9,7 @@ namespace Porticle.CLDR.Units.UnitInfoClasses
 
         public static PatternsForUnit GetPatterns(Unit unit)
         {
-            return UnitsDictionary.GetOrAdd(unit, u => LoadUnitDataFromResource(u));
+            return UnitsDictionary.GetOrAdd(unit, LoadUnitDataFromResource);
         }
 
         private static PatternsForUnit LoadUnitDataFromResource(Unit unit1)

@@ -2,7 +2,7 @@
 
 namespace Porticle.CLDR.Units.Serialization
 {
-    struct PluralFormPatternInfo
+    internal struct PluralFormPatternInfo
     {
         public PluralFormPatternInfo(BinaryReader br)
         {
@@ -13,10 +13,10 @@ namespace Porticle.CLDR.Units.Serialization
             Text = br.ReadString();
         }
 
-        public string Language;
-        public PluralFormLength PluralFormLength;
-        public GrammaticalCase GrammaticalCase;
-        public PluralCategory PluralCategory;
-        public string Text;
+        public readonly string Language;
+        public readonly PluralFormLength PluralFormLength;
+        public readonly GrammaticalCase GrammaticalCase;
+        public readonly PluralCategory PluralCategory;
+        public readonly string Text;
     }
 }

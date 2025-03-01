@@ -1,216 +1,129 @@
 using System;
-using System.Collections.Specialized;
-using System.IO;
 
 namespace Porticle.CLDR.Units.UnitInfoClasses
 {
     /// <summary>
-    /// Plural Patterns for a Specific Unit, FormLength and Language
+    ///     Plural Patterns for a Specific Unit, FormLength and Language
     /// </summary>
     /// <remarks>
-    /// This class organizes plural patterns according to specific grammatical cases such as accusative, dative, genitive, etc.,
-    /// along with a default case referred to as "None." It provides functionality to retrieve plural patterns for a given
-    /// grammatical case. These patterns can be useful in language-specific localization where grammatical cases and their
-    /// associated plural forms are necessary for proper linguistic representation.
+    ///     This class organizes plural patterns according to specific grammatical cases such as accusative, dative, genitive, etc.,
+    ///     along with a default case referred to as "None." It provides functionality to retrieve plural patterns for a given
+    ///     grammatical case. These patterns can be useful in language-specific localization where grammatical cases and their
+    ///     associated plural forms are necessary for proper linguistic representation.
     /// </remarks>
     internal class PluralPatternsForUnitLanguageAndLength
     {
-        public PluralPatternsForUnitLanguageAndLength()
-        {
-        }
-
         public string? DisplayName { get; internal set; }
 
         public string? PerUnitPattern { get; internal set; }
 
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? None { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Accusative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Dative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Genitive { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Instrumental { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Locative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Elative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Illative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Partitive { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Oblique { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Terminative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Translative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Ablative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Sociative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Ergative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Vocative { get; set; }
+
+        private PluralPatternsForUnitLanguageLengthAndCaseBase? Prepositional { get; set; }
+
         internal PluralPatternsForUnitLanguageLengthAndCaseBase GetOrAdd(GrammaticalCase grammaticalCase)
         {
-            switch (grammaticalCase)
+            return grammaticalCase switch
             {
-                case GrammaticalCase.None:
-                    return None ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);
-                case GrammaticalCase.Accusative:
-                    return Accusative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Dative:
-                    return Dative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Genitive:
-                    return Genitive ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Instrumental:
-                    return Instrumental ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Locative:
-                    return Locative ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Elative:
-                    return Elative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Illative:
-                    return Illative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Partitive:
-                    return Partitive  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Oblique:
-                    return Oblique  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Terminative:
-                    return Terminative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Translative:
-                    return Translative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Ablative:
-                    return Ablative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Sociative:
-                    return Sociative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Ergative:
-                    return Ergative  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Vocative:
-                    return Vocative ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);;
-                case GrammaticalCase.Prepositional:
-                    return Prepositional  ??= new PluralPatternsForUnitLanguageLengthAndCase(grammaticalCase);
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(grammaticalCase), grammaticalCase, null);
-            }
+                GrammaticalCase.None => None ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Accusative => Accusative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Dative => Dative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Genitive => Genitive ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Instrumental => Instrumental ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Locative => Locative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Elative => Elative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Illative => Illative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Partitive => Partitive ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Oblique => Oblique ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Terminative => Terminative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Translative => Translative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Ablative => Ablative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Sociative => Sociative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Ergative => Ergative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Vocative => Vocative ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                GrammaticalCase.Prepositional => Prepositional ??= new PluralPatternsForUnitLanguageLengthAndCase(),
+                _ => throw new ArgumentOutOfRangeException(nameof(grammaticalCase), grammaticalCase, null)
+            };
         }
-                
 
-        public PluralPatternsForUnitLanguageLengthAndCaseBase GetCountInfo(GrammaticalCase grammaticalCase)
+
+        /// <para>
+        ///     Returns the plural patterns for the specified grammatical case, resolving to the most appropriate case if the specific case is not available.
+        /// </para>
+        /// <param name="grammaticalCase">The grammatical case to retrieve plural patterns for.</param>
+        /// <returns>The plural patterns corresponding to the specified grammatical case, or a fallback case if unavailable.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">Thrown when an unsupported grammatical case is provided.</exception>
+        public PluralPatternsForUnitLanguageLengthAndCaseBase? GetCountInfo(GrammaticalCase grammaticalCase)
         {
             switch (grammaticalCase)
             {
                 case GrammaticalCase.None:
-                    return None;
+                    return None ?? Oblique;
                 case GrammaticalCase.Accusative:
-                    return Accusative ?? None;
+                    return Accusative ?? None ?? Oblique;
                 case GrammaticalCase.Dative:
-                    return Dative ?? None;
+                    return Dative ?? None ?? Oblique;
                 case GrammaticalCase.Genitive:
-                    return Genitive ?? None;
+                    return Genitive ?? None ?? Oblique;
                 case GrammaticalCase.Instrumental:
-                    return Instrumental ?? None;
+                    return Instrumental ?? None ?? Oblique;
                 case GrammaticalCase.Locative:
-                    return Locative ?? None;
+                    return Locative ?? None ?? Oblique;
                 case GrammaticalCase.Elative:
-                    return Elative ?? None;
+                    return Elative ?? None ?? Oblique;
                 case GrammaticalCase.Illative:
-                    return Illative ?? None;
+                    return Illative ?? None ?? Oblique;
                 case GrammaticalCase.Partitive:
-                    return Partitive ?? None;
+                    return Partitive ?? None ?? Oblique;
                 case GrammaticalCase.Oblique:
-                    return Oblique ?? None;
+                    return Oblique ?? None ?? Oblique;
                 case GrammaticalCase.Terminative:
-                    return Terminative ?? None;
+                    return Terminative ?? None ?? Oblique;
                 case GrammaticalCase.Translative:
-                    return Translative ?? None;
+                    return Translative ?? None ?? Oblique;
                 case GrammaticalCase.Ablative:
-                    return Ablative ?? None;
+                    return Ablative ?? None ?? Oblique;
                 case GrammaticalCase.Sociative:
-                    return Sociative ?? None;
+                    return Sociative ?? None ?? Oblique;
                 case GrammaticalCase.Ergative:
-                    return Ergative ?? None;
+                    return Ergative ?? None ?? Oblique;
                 case GrammaticalCase.Vocative:
-                    return Vocative ?? None;
+                    return Vocative ?? None ?? Oblique;
                 case GrammaticalCase.Prepositional:
-                    return Prepositional ?? None;
+                    return Prepositional ?? None ?? Oblique;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(grammaticalCase), grammaticalCase, null);
             }
         }
-
-        public UnitGender? Gender { get; internal set;}
-
-        /// <summary>
-        /// Represents the absence of a grammatical case or an undefined case.
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase None { get; internal set; }
-
-        /// <summary>
-        /// Accusative case - marks the direct object of a verb.
-        /// Example: "She reads the book." ("the book" is in the accusative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Accusative { get; internal set; }
-
-        /// <summary>
-        /// Dative case - marks the indirect object of a verb.
-        /// Example: "He gave her a gift." ("her" is in the dative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Dative { get; internal set;}
-
-        /// <summary>
-        /// Genitive case - indicates possession or relationship.
-        /// Example: "This is John's car." ("John's" is in the genitive case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Genitive { get; internal set; }
-
-        /// <summary>
-        /// Instrumental case - indicates the means or instrument used.
-        /// Example: "He wrote with a pen." ("with a pen" is in the instrumental case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Instrumental { get; internal set; }
-
-        /// <summary>
-        /// Locative case - denotes a location or place.
-        /// Example: "She is in the house." ("in the house" is in the locative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Locative { get; internal set; }
-
-        /// <summary>
-        /// Elative case - indicates movement out of or from something.
-        /// Example: "He came out of the building." ("out of the building" is in the elative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Elative { get; internal set; }
-
-        /// <summary>
-        /// Illative case - indicates movement into something.
-        /// Example: "She went into the room." ("into the room" is in the illative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Illative{ get;  internal set;}
-
-        /// <summary>
-        /// Partitive case - denotes an indefinite or partial quantity.
-        /// Example: "He drank some water." ("some water" is in the partitive case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Partitive{ get; internal set; }
-
-        /// <summary>
-        /// Oblique case - a general term for non-nominative cases.
-        /// Used when a specific case is not determined.
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Oblique{ get; internal set; }
-
-        /// <summary>
-        /// Terminative case - indicates an endpoint or limit of an action.
-        /// Example: "He worked until midnight." ("until midnight" is in the terminative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Terminative{ get; internal set; }
-
-        /// <summary>
-        /// Translative case - denotes a change of state or transformation.
-        /// Example: "She became a teacher." ("a teacher" is in the translative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Translative{ get; internal set; }
-
-        /// <summary>
-        /// Ablative case - indicates movement away from something.
-        /// Example: "He moved away from the city." ("from the city" is in the ablative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Ablative{ get; internal set; }
-
-        /// <summary>
-        /// Sociative case - denotes accompaniment or association.
-        /// Example: "She went with her friend." ("with her friend" is in the sociative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Sociative{ get; internal set; }
-
-        /// <summary>
-        /// Ergative case - marks the subject of a transitive verb in ergative languages.
-        /// Example: "The door opened." ("The door" is in the ergative case in some languages)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Ergative{ get; internal set; }
-
-        /// <summary>
-        /// Vocative case - used for direct address.
-        /// Example: "O Lord, hear my prayer!" ("O Lord" is in the vocative case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Vocative{ get; internal set; }
-
-        /// <summary>
-        /// Prepositional case - used exclusively with certain prepositions.
-        /// Example: "He thinks about the problem." ("about the problem" is in the prepositional case)
-        /// </summary>
-        public PluralPatternsForUnitLanguageLengthAndCaseBase? Prepositional{ get; internal set; }
     }
 }

@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\Porticle.CLDR.Units\Porticle.CLDR.Units.csproj" />
+        <ProjectReference Include="..\Porticle.CLDR.Units\Porticle.CLDR.Units.csproj"/>
     </ItemGroup>
 
 </Project>
