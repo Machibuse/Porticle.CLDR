@@ -9,7 +9,7 @@
         <Description>Simple C# Library that embeds the Unicode CLDR Units Data for .net</Description>
         <Copyright>Carsten Jendro</Copyright>
         <PackageProjectUrl>https://github.com/Machibuse/Porticle.CLDR</PackageProjectUrl>
-        <PackageLicenseUrl>https://github.com/Machibuse/Porticle.CLDR/blob/main/LICENSE</PackageLicenseUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageIcon>pinky32.png</PackageIcon>
         <RepositoryUrl>https://github.com/Machibuse/Porticle.CLDR.git</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
@@ -26,10 +26,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Update="pinky32.png">
-            <Pack>True</Pack>
-            <PackagePath></PackagePath>
-        </None>
+        <None Include="pinky32.png" Pack="True" PackagePath="/" />
     </ItemGroup>
 
 </Project>
