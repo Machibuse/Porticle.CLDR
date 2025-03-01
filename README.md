@@ -1,6 +1,7 @@
 # Unit CLDR Data for C#
 
 [![Build and Release](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml/badge.svg)](https://github.com/Machibuse/Porticle.CLDR/actions/workflows/release.yaml)  
+
 [![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support%20Me-blue?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/CarstenJendro)
 
 This library allows you to format units with numeric values, such as `1 byte` or `42 bytes`, ensuring the correct grammatical forms using CLDR data.
@@ -21,6 +22,27 @@ This library allows you to format units with numeric values, such as `1 byte` or
 
 - **Versioning**
   I will always try to ensure that the version of this library corresponds to the version of the CLDR library.
+
+
+## Getting Started
+
+**Porticle.CLDR.Units** is available via the **NuGet** package manager. You can find the package here: [NuGet - Porticle.CLDR.Units](https://www.nuget.org/packages/Porticle.CLDR.Units/).
+
+State on nuget.org [![NuGet Latest Version](https://img.shields.io/nuget/v/Porticle.CLDR.Units.svg)](https://www.nuget.org/packages/Porticle.CLDR.Units/)   [![NuGet Downloads](https://img.shields.io/nuget/dt/Porticle.CLDR.Units.svg)](https://www.nuget.org/packages/Porticle.CLDR.Units/)  
+
+To install **Porticle.CLDR.Units** manually, use the following command in the Package Manager Console:
+
+```
+Install-Package Porticle.CLDR.Units
+```
+
+## Support
+
+If you find this project useful and would like to support its development, consider buying me a coffee. Your support helps me keep improving and maintaining this library. Thank you! ☕  
+
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-Support%20Me-blue?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/CarstenJendro)
+
+Bugs and feature requests are also welcome.
 
 # Example
 
