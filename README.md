@@ -9,6 +9,9 @@ This library allows you to format units with numeric values, such as `1 byte` or
 - **Fully Functional Out of the Box**  
   No additional CLDR data download is required; everything is included in the package.
 
+- **Supports formatting of all Units in CLDR-Units in singular, plural and all supported gramatical cases**  
+  Formatting often used words like `byte`/`bytes` `day`/`days` and and more than 200 other units for acceleration, energy, length, speed and more.
+
 - **Embedded CLDR Data**  
   The latest version of CLDR unit data is included as compressed embedded resources within the library.  
 
