@@ -107,9 +107,9 @@ namespace Porticle.CLDR.Units.Serialization
                 {
                     pluralPatternsForUnitAndLanguage = new PluralPatternsForUnitAndLanguage();
                     patterns.PluralPatternsForUnitByLanguage.Add(genderInfo.Language, pluralPatternsForUnitAndLanguage);
-
-                    pluralPatternsForUnitAndLanguage.Gender = genderInfo.UnitGender;
                 }
+
+                pluralPatternsForUnitAndLanguage.Gender = genderInfo.UnitGender;
             }
 
             return patterns;
