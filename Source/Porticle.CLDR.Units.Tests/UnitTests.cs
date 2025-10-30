@@ -1,3 +1,4 @@
+using System.Globalization;
 using Porticle.CLDR.Units.Serialization;
 
 namespace Porticle.CLDR.Units.Tests;
@@ -62,5 +63,30 @@ public class UnitTests
                 }
             }
         }
+    }
+
+    [TestMethod]
+    public void GetFormatString_UsesLengthSpecificFallback()
+    {
+        var cldrUnits = new CldrUnits(Unit.LengthMeter);
+
+        var shortFormat = cldrUnits.GetFormatString("xx", 1, PluralFormLength.Short, GrammaticalCase.Oblique);
+        var narrowFormat = cldrUnits.GetFormatString("xx", 1, PluralFormLength.Narrow, GrammaticalCase.Oblique);
+
+        Assert.AreEqual("{0} m", shortFormat);
+        Assert.AreEqual("{0}m", narrowFormat);
+    }
+
+    [TestMethod]
+    public void FormatUnit_UsesLengthSpecificFallback()
+    {
+        var cldrUnits = new CldrUnits(Unit.LengthMeter);
+        var culture = CultureInfo.InvariantCulture;
+
+        var shortFormat = cldrUnits.FormatUnit(culture, 1, PluralFormLength.Short, GrammaticalCase.Oblique);
+        var narrowFormat = cldrUnits.FormatUnit(culture, 1, PluralFormLength.Narrow, GrammaticalCase.Oblique);
+
+        Assert.AreEqual("1 m", shortFormat);
+        Assert.AreEqual("1m", narrowFormat);
     }
 }
