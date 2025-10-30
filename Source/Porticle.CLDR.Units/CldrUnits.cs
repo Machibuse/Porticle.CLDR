@@ -48,7 +48,7 @@ namespace Porticle.CLDR.Units
         /// <returns>The format String like "{0} weeks"</returns>
         public string GetFormatString(string language, int count, PluralFormLength length, GrammaticalCase grammaticalCase)
         {
-            return _patterns.GetFormat(language, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long);
+            return _patterns.GetFormat(language, count, length, grammaticalCase) ?? GetFallbackPattern(length);
         }
 
         /// <summary>
@@ -61,7 +61,7 @@ namespace Porticle.CLDR.Units
         /// <returns>A format string that matches the specified culture, count, plural form length, and grammatical case. If no specific format string is found, a fallback pattern is returned.</returns>
         public string GetFormatString(CultureInfo culture, int count, PluralFormLength length, GrammaticalCase grammaticalCase)
         {
-            return _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long);
+            return _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(length);
         }
 
         /// <summary>
@@ -81,10 +81,10 @@ namespace Porticle.CLDR.Units
         {
             if (numberFormat == null)
             {
-                return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long), count);
+                return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(length), count);
             }
 
-            return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(PluralFormLength.Long),
+            return string.Format(culture, _patterns.GetFormat(culture.Name, count, length, grammaticalCase) ?? GetFallbackPattern(length),
                 count.ToString(numberFormat, culture));
         }
 

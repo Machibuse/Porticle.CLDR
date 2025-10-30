@@ -1,3 +1,4 @@
+using System.Globalization;
 using Porticle.CLDR.Units.Serialization;
 
 namespace Porticle.CLDR.Units.Tests;
@@ -50,7 +51,7 @@ public class UnitTests
                     {
                         foreach (var count in (int[])[0,1,2,3,11,21,111,121])
                         {
-                            var result = cldrUnits.GetFormatString(lang, count, PluralFormLength.Long, grammaticalCase);
+                            var result = cldrUnits.GetFormatString(lang, count, pluralFormLength, grammaticalCase);
                             Assert.IsNotNull(result);
                             Assert.IsTrue(result.Length > 0);
                             if (count > 2)
@@ -63,4 +64,31 @@ public class UnitTests
             }
         }
     }
+
+    [TestMethod]
+    public void FormatUnit_UsesFallbackForShortPatterns()
+    {
+        var cldrUnits = new CldrUnits(Unit.AreaBuJp);
+        var culture = new CultureInfo("de");
+
+        var formatted = cldrUnits.FormatUnit(culture, 123, PluralFormLength.Short, GrammaticalCase.Oblique);
+        Assert.AreEqual("123 歩", formatted);
+
+        var formattedWithNumberFormat = cldrUnits.FormatUnit(culture, 123, PluralFormLength.Short, GrammaticalCase.Oblique, "N2");
+        Assert.AreEqual("123,00 歩", formattedWithNumberFormat);
+    }
+
+    [TestMethod]
+    public void FormatUnit_UsesFallbackForNarrowPatterns()
+    {
+        var cldrUnits = new CldrUnits(Unit.AreaBuJp);
+        var culture = new CultureInfo("de");
+
+        var formatted = cldrUnits.FormatUnit(culture, 321, PluralFormLength.Narrow, GrammaticalCase.Oblique);
+        Assert.AreEqual("321歩", formatted);
+
+        var formattedWithNumberFormat = cldrUnits.FormatUnit(culture, 321, PluralFormLength.Narrow, GrammaticalCase.Oblique, "N1");
+        Assert.AreEqual("321,0歩", formattedWithNumberFormat);
+    }
 }
+
