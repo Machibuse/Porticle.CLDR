@@ -63,4 +63,25 @@ public class UnitTests
             }
         }
     }
+
+    [TestMethod]
+    public void GetUnitGenderAfterDisplayNameLookupMatchesEmbeddedGender()
+    {
+        const Unit unit = Unit.DurationWeek;
+        const string language = "de";
+
+        var loader = new CldrResourceLoader();
+        var expectedGender = loader.Load(unit).GetUnitGender(language);
+
+        Assert.IsNotNull(expectedGender, "The embedded data does not contain a gender for the selected language.");
+
+        var cldrUnits = new CldrUnits(unit);
+
+        var displayName = cldrUnits.GetDisplayName(language, PluralFormLength.Long);
+        Assert.IsNotNull(displayName, "The regression scenario requires an available display name.");
+
+        var genderAfterDisplayNameLookup = cldrUnits.GetUnitGender(language);
+
+        Assert.AreEqual(expectedGender.Value, genderAfterDisplayNameLookup);
+    }
 }
